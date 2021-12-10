@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "clientId": 7,
+  "currency": "BTC",
+  "balance": 16.5,
+  "status": "ACTIVE",
+  "_links": {
+    "self": {
+      "href": "http://localhost/accounts/1"
+    },
+    "entries": {
+      "href": "http://localhost/accounts/1/entries"
+    },
+    "client": {
+      "href": "http://localhost/clients/7"
+    }
+  }
+}

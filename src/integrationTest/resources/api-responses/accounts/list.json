@@ -1,0 +1,929 @@
+{
+  "_embedded": {
+    "accountDataList": [
+      {
+        "id": 1,
+        "clientId": 77,
+        "currency": "EUR",
+        "balance": 16.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/1"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/1/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/77"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "clientId": 154,
+        "currency": "EUR",
+        "balance": 33.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/2"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/2/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/154"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "clientId": 231,
+        "currency": "EUR",
+        "balance": 49.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/3"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/3/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/231"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "clientId": 308,
+        "currency": "EUR",
+        "balance": 66.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/4"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/4/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/308"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "clientId": 385,
+        "currency": "EUR",
+        "balance": 82.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/5"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/5/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/385"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "clientId": 462,
+        "currency": "EUR",
+        "balance": 99.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/6"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/6/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/462"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "clientId": 539,
+        "currency": "EUR",
+        "balance": 115.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/7"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/7/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/539"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "clientId": 616,
+        "currency": "EUR",
+        "balance": 132.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/8"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/8/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/616"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "clientId": 693,
+        "currency": "EUR",
+        "balance": 148.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/9"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/9/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/693"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "clientId": 770,
+        "currency": "EUR",
+        "balance": 165.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/10"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/10/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/770"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "clientId": 847,
+        "currency": "EUR",
+        "balance": 181.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/11"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/11/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/847"
+          }
+        }
+      },
+      {
+        "id": 12,
+        "clientId": 924,
+        "currency": "EUR",
+        "balance": 198.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/12"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/12/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/924"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "clientId": 1001,
+        "currency": "EUR",
+        "balance": 214.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/13"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/13/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1001"
+          }
+        }
+      },
+      {
+        "id": 14,
+        "clientId": 1078,
+        "currency": "EUR",
+        "balance": 231.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/14"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/14/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1078"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "clientId": 1155,
+        "currency": "EUR",
+        "balance": 247.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/15"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/15/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1155"
+          }
+        }
+      },
+      {
+        "id": 16,
+        "clientId": 1232,
+        "currency": "EUR",
+        "balance": 264.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/16"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/16/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1232"
+          }
+        }
+      },
+      {
+        "id": 17,
+        "clientId": 1309,
+        "currency": "EUR",
+        "balance": 280.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/17"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/17/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1309"
+          }
+        }
+      },
+      {
+        "id": 18,
+        "clientId": 1386,
+        "currency": "EUR",
+        "balance": 297.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/18"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/18/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1386"
+          }
+        }
+      },
+      {
+        "id": 19,
+        "clientId": 1463,
+        "currency": "EUR",
+        "balance": 313.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/19"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/19/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1463"
+          }
+        }
+      },
+      {
+        "id": 20,
+        "clientId": 1540,
+        "currency": "EUR",
+        "balance": 330.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/20"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/20/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1540"
+          }
+        }
+      },
+      {
+        "id": 21,
+        "clientId": 1617,
+        "currency": "EUR",
+        "balance": 346.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/21"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/21/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1617"
+          }
+        }
+      },
+      {
+        "id": 22,
+        "clientId": 1694,
+        "currency": "EUR",
+        "balance": 363.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/22"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/22/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1694"
+          }
+        }
+      },
+      {
+        "id": 23,
+        "clientId": 1771,
+        "currency": "EUR",
+        "balance": 379.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/23"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/23/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1771"
+          }
+        }
+      },
+      {
+        "id": 24,
+        "clientId": 1848,
+        "currency": "EUR",
+        "balance": 396.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/24"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/24/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1848"
+          }
+        }
+      },
+      {
+        "id": 25,
+        "clientId": 1925,
+        "currency": "EUR",
+        "balance": 412.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/25"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/25/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/1925"
+          }
+        }
+      },
+      {
+        "id": 26,
+        "clientId": 2002,
+        "currency": "EUR",
+        "balance": 429.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/26"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/26/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2002"
+          }
+        }
+      },
+      {
+        "id": 27,
+        "clientId": 2079,
+        "currency": "EUR",
+        "balance": 445.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/27"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/27/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2079"
+          }
+        }
+      },
+      {
+        "id": 28,
+        "clientId": 2156,
+        "currency": "EUR",
+        "balance": 462.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/28"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/28/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2156"
+          }
+        }
+      },
+      {
+        "id": 29,
+        "clientId": 2233,
+        "currency": "EUR",
+        "balance": 478.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/29"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/29/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2233"
+          }
+        }
+      },
+      {
+        "id": 30,
+        "clientId": 2310,
+        "currency": "EUR",
+        "balance": 495.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/30"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/30/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2310"
+          }
+        }
+      },
+      {
+        "id": 31,
+        "clientId": 2387,
+        "currency": "EUR",
+        "balance": 511.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/31"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/31/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2387"
+          }
+        }
+      },
+      {
+        "id": 32,
+        "clientId": 2464,
+        "currency": "EUR",
+        "balance": 528.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/32"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/32/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2464"
+          }
+        }
+      },
+      {
+        "id": 33,
+        "clientId": 2541,
+        "currency": "EUR",
+        "balance": 544.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/33"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/33/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2541"
+          }
+        }
+      },
+      {
+        "id": 34,
+        "clientId": 2618,
+        "currency": "EUR",
+        "balance": 561.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/34"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/34/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2618"
+          }
+        }
+      },
+      {
+        "id": 35,
+        "clientId": 2695,
+        "currency": "EUR",
+        "balance": 577.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/35"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/35/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2695"
+          }
+        }
+      },
+      {
+        "id": 36,
+        "clientId": 2772,
+        "currency": "EUR",
+        "balance": 594.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/36"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/36/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2772"
+          }
+        }
+      },
+      {
+        "id": 37,
+        "clientId": 2849,
+        "currency": "EUR",
+        "balance": 610.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/37"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/37/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2849"
+          }
+        }
+      },
+      {
+        "id": 38,
+        "clientId": 2926,
+        "currency": "EUR",
+        "balance": 627.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/38"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/38/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/2926"
+          }
+        }
+      },
+      {
+        "id": 39,
+        "clientId": 3003,
+        "currency": "EUR",
+        "balance": 643.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/39"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/39/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3003"
+          }
+        }
+      },
+      {
+        "id": 40,
+        "clientId": 3080,
+        "currency": "EUR",
+        "balance": 660.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/40"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/40/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3080"
+          }
+        }
+      },
+      {
+        "id": 41,
+        "clientId": 3157,
+        "currency": "EUR",
+        "balance": 676.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/41"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/41/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3157"
+          }
+        }
+      },
+      {
+        "id": 42,
+        "clientId": 3234,
+        "currency": "EUR",
+        "balance": 693.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/42"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/42/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3234"
+          }
+        }
+      },
+      {
+        "id": 43,
+        "clientId": 3311,
+        "currency": "EUR",
+        "balance": 709.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/43"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/43/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3311"
+          }
+        }
+      },
+      {
+        "id": 44,
+        "clientId": 3388,
+        "currency": "EUR",
+        "balance": 726.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/44"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/44/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3388"
+          }
+        }
+      },
+      {
+        "id": 45,
+        "clientId": 3465,
+        "currency": "EUR",
+        "balance": 742.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/45"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/45/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3465"
+          }
+        }
+      },
+      {
+        "id": 46,
+        "clientId": 3542,
+        "currency": "EUR",
+        "balance": 759.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/46"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/46/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3542"
+          }
+        }
+      },
+      {
+        "id": 47,
+        "clientId": 3619,
+        "currency": "EUR",
+        "balance": 775.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/47"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/47/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3619"
+          }
+        }
+      },
+      {
+        "id": 48,
+        "clientId": 3696,
+        "currency": "EUR",
+        "balance": 792.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/48"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/48/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3696"
+          }
+        }
+      },
+      {
+        "id": 49,
+        "clientId": 3773,
+        "currency": "EUR",
+        "balance": 808.5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/49"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/49/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3773"
+          }
+        }
+      },
+      {
+        "id": 50,
+        "clientId": 3850,
+        "currency": "EUR",
+        "balance": 825.0,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/accounts/50"
+          },
+          "entries": {
+            "href": "http://localhost/accounts/50/entries"
+          },
+          "client": {
+            "href": "http://localhost/clients/3850"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "first": {
+      "href": "http://localhost/accounts?page=0&size=10"
+    },
+    "prev": {
+      "href": "http://localhost/accounts?page=0&size=10"
+    },
+    "self": {
+      "href": "http://localhost/accounts?page=1&size=10"
+    },
+    "next": {
+      "href": "http://localhost/accounts?page=2&size=10"
+    },
+    "last": {
+      "href": "http://localhost/accounts?page=4&size=10"
+    }
+  },
+  "page": {
+    "size": 10,
+    "totalElements": 50,
+    "totalPages": 5,
+    "number": 1
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": 1,
+  "timestamp": "2021-12-10T20:17:22.476322",
+  "type": "EXCHANGE",
+  "exchangeRate": {
+    "rate": 0.7,
+    "fromCurrency": "EUR",
+    "toCurrency": "USD"
+  },
+  "fromAccount": {
+    "id": 25,
+    "currency": "USD",
+    "amount": -15
+  },
+  "toAccount": {
+    "id": 12,
+    "currency": "EUR",
+    "amount": 10.5
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost/transactions/1"
+    },
+    "entries": {
+      "href": "http://localhost/transactions/1/entries"
+    },
+    "from-account": {
+      "href": "http://localhost/accounts/25"
+    },
+    "to-account": {
+      "href": "http://localhost/accounts/12"
+    }
+  }
+}

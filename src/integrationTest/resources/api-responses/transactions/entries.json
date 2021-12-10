@@ -1,0 +1,86 @@
+{
+  "_embedded": {
+    "accountEntryDataList": [
+      {
+        "accountId": 1,
+        "transactionId": 16,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 77.3,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/16"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 32,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 154.6,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/32"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 48,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 231.9,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/48"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 64,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 309.2,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/64"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 80,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 386.5,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/80"
+          }
+        }
+      }
+    ]
+  }
+}

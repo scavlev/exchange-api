@@ -1,0 +1,1729 @@
+{
+  "_embedded": {
+    "transactionDataList": [
+      {
+        "id": 1,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 0.7,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 25,
+          "currency": "USD",
+          "amount": -15
+        },
+        "toAccount": {
+          "id": 12,
+          "currency": "EUR",
+          "amount": 10.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/1"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/1/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/25"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/12"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 1.4,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 50,
+          "currency": "USD",
+          "amount": -30
+        },
+        "toAccount": {
+          "id": 24,
+          "currency": "EUR",
+          "amount": 42.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/2"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/2/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/50"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/24"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 2.1,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 75,
+          "currency": "USD",
+          "amount": -45
+        },
+        "toAccount": {
+          "id": 36,
+          "currency": "EUR",
+          "amount": 94.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/3"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/3/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/75"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/36"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 2.8,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 100,
+          "currency": "USD",
+          "amount": -60
+        },
+        "toAccount": {
+          "id": 48,
+          "currency": "EUR",
+          "amount": 168.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/4"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/4/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/100"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/48"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 3.5,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 125,
+          "currency": "USD",
+          "amount": -75
+        },
+        "toAccount": {
+          "id": 60,
+          "currency": "EUR",
+          "amount": 262.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/5"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/5/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/125"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/60"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 4.2,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 150,
+          "currency": "USD",
+          "amount": -90
+        },
+        "toAccount": {
+          "id": 72,
+          "currency": "EUR",
+          "amount": 378.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/6"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/6/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/150"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/72"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 4.9,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 175,
+          "currency": "USD",
+          "amount": -105
+        },
+        "toAccount": {
+          "id": 84,
+          "currency": "EUR",
+          "amount": 514.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/7"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/7/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/175"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/84"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 5.6,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 200,
+          "currency": "USD",
+          "amount": -120
+        },
+        "toAccount": {
+          "id": 96,
+          "currency": "EUR",
+          "amount": 672.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/8"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/8/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/200"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/96"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 6.3,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 225,
+          "currency": "USD",
+          "amount": -135
+        },
+        "toAccount": {
+          "id": 108,
+          "currency": "EUR",
+          "amount": 850.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/9"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/9/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/225"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/108"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 7.0,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 250,
+          "currency": "USD",
+          "amount": -150
+        },
+        "toAccount": {
+          "id": 120,
+          "currency": "EUR",
+          "amount": 1050.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/10"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/10/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/250"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/120"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 7.7,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 275,
+          "currency": "USD",
+          "amount": -165
+        },
+        "toAccount": {
+          "id": 132,
+          "currency": "EUR",
+          "amount": 1270.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/11"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/11/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/275"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/132"
+          }
+        }
+      },
+      {
+        "id": 12,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 8.4,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 300,
+          "currency": "USD",
+          "amount": -180
+        },
+        "toAccount": {
+          "id": 144,
+          "currency": "EUR",
+          "amount": 1512.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/12"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/12/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/300"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/144"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 9.1,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 325,
+          "currency": "USD",
+          "amount": -195
+        },
+        "toAccount": {
+          "id": 156,
+          "currency": "EUR",
+          "amount": 1774.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/13"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/13/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/325"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/156"
+          }
+        }
+      },
+      {
+        "id": 14,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 9.8,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 350,
+          "currency": "USD",
+          "amount": -210
+        },
+        "toAccount": {
+          "id": 168,
+          "currency": "EUR",
+          "amount": 2058.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/14"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/14/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/350"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/168"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 10.5,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 375,
+          "currency": "USD",
+          "amount": -225
+        },
+        "toAccount": {
+          "id": 180,
+          "currency": "EUR",
+          "amount": 2362.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/15"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/15/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/375"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/180"
+          }
+        }
+      },
+      {
+        "id": 16,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 11.2,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 400,
+          "currency": "USD",
+          "amount": -240
+        },
+        "toAccount": {
+          "id": 192,
+          "currency": "EUR",
+          "amount": 2688.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/16"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/16/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/400"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/192"
+          }
+        }
+      },
+      {
+        "id": 17,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 11.9,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 425,
+          "currency": "USD",
+          "amount": -255
+        },
+        "toAccount": {
+          "id": 204,
+          "currency": "EUR",
+          "amount": 3034.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/17"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/17/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/425"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/204"
+          }
+        }
+      },
+      {
+        "id": 18,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 12.6,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 450,
+          "currency": "USD",
+          "amount": -270
+        },
+        "toAccount": {
+          "id": 216,
+          "currency": "EUR",
+          "amount": 3402.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/18"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/18/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/450"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/216"
+          }
+        }
+      },
+      {
+        "id": 19,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 13.3,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 475,
+          "currency": "USD",
+          "amount": -285
+        },
+        "toAccount": {
+          "id": 228,
+          "currency": "EUR",
+          "amount": 3790.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/19"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/19/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/475"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/228"
+          }
+        }
+      },
+      {
+        "id": 20,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 14.0,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 500,
+          "currency": "USD",
+          "amount": -300
+        },
+        "toAccount": {
+          "id": 240,
+          "currency": "EUR",
+          "amount": 4200.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/20"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/20/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/500"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/240"
+          }
+        }
+      },
+      {
+        "id": 21,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 14.7,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 525,
+          "currency": "USD",
+          "amount": -315
+        },
+        "toAccount": {
+          "id": 252,
+          "currency": "EUR",
+          "amount": 4630.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/21"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/21/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/525"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/252"
+          }
+        }
+      },
+      {
+        "id": 22,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 15.4,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 550,
+          "currency": "USD",
+          "amount": -330
+        },
+        "toAccount": {
+          "id": 264,
+          "currency": "EUR",
+          "amount": 5082.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/22"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/22/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/550"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/264"
+          }
+        }
+      },
+      {
+        "id": 23,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 16.1,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 575,
+          "currency": "USD",
+          "amount": -345
+        },
+        "toAccount": {
+          "id": 276,
+          "currency": "EUR",
+          "amount": 5554.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/23"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/23/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/575"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/276"
+          }
+        }
+      },
+      {
+        "id": 24,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 16.8,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 600,
+          "currency": "USD",
+          "amount": -360
+        },
+        "toAccount": {
+          "id": 288,
+          "currency": "EUR",
+          "amount": 6048.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/24"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/24/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/600"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/288"
+          }
+        }
+      },
+      {
+        "id": 25,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 17.5,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 625,
+          "currency": "USD",
+          "amount": -375
+        },
+        "toAccount": {
+          "id": 300,
+          "currency": "EUR",
+          "amount": 6562.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/25"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/25/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/625"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/300"
+          }
+        }
+      },
+      {
+        "id": 26,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 18.2,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 650,
+          "currency": "USD",
+          "amount": -390
+        },
+        "toAccount": {
+          "id": 312,
+          "currency": "EUR",
+          "amount": 7098.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/26"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/26/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/650"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/312"
+          }
+        }
+      },
+      {
+        "id": 27,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 18.9,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 675,
+          "currency": "USD",
+          "amount": -405
+        },
+        "toAccount": {
+          "id": 324,
+          "currency": "EUR",
+          "amount": 7654.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/27"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/27/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/675"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/324"
+          }
+        }
+      },
+      {
+        "id": 28,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 19.6,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 700,
+          "currency": "USD",
+          "amount": -420
+        },
+        "toAccount": {
+          "id": 336,
+          "currency": "EUR",
+          "amount": 8232.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/28"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/28/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/700"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/336"
+          }
+        }
+      },
+      {
+        "id": 29,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 20.3,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 725,
+          "currency": "USD",
+          "amount": -435
+        },
+        "toAccount": {
+          "id": 348,
+          "currency": "EUR",
+          "amount": 8830.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/29"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/29/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/725"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/348"
+          }
+        }
+      },
+      {
+        "id": 30,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 21.0,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 750,
+          "currency": "USD",
+          "amount": -450
+        },
+        "toAccount": {
+          "id": 360,
+          "currency": "EUR",
+          "amount": 9450.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/30"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/30/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/750"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/360"
+          }
+        }
+      },
+      {
+        "id": 31,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 21.7,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 775,
+          "currency": "USD",
+          "amount": -465
+        },
+        "toAccount": {
+          "id": 372,
+          "currency": "EUR",
+          "amount": 10090.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/31"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/31/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/775"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/372"
+          }
+        }
+      },
+      {
+        "id": 32,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 22.4,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 800,
+          "currency": "USD",
+          "amount": -480
+        },
+        "toAccount": {
+          "id": 384,
+          "currency": "EUR",
+          "amount": 10752.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/32"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/32/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/800"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/384"
+          }
+        }
+      },
+      {
+        "id": 33,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 23.1,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 825,
+          "currency": "USD",
+          "amount": -495
+        },
+        "toAccount": {
+          "id": 396,
+          "currency": "EUR",
+          "amount": 11434.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/33"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/33/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/825"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/396"
+          }
+        }
+      },
+      {
+        "id": 34,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 23.8,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 850,
+          "currency": "USD",
+          "amount": -510
+        },
+        "toAccount": {
+          "id": 408,
+          "currency": "EUR",
+          "amount": 12138.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/34"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/34/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/850"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/408"
+          }
+        }
+      },
+      {
+        "id": 35,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 24.5,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 875,
+          "currency": "USD",
+          "amount": -525
+        },
+        "toAccount": {
+          "id": 420,
+          "currency": "EUR",
+          "amount": 12862.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/35"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/35/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/875"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/420"
+          }
+        }
+      },
+      {
+        "id": 36,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 25.2,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 900,
+          "currency": "USD",
+          "amount": -540
+        },
+        "toAccount": {
+          "id": 432,
+          "currency": "EUR",
+          "amount": 13608.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/36"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/36/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/900"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/432"
+          }
+        }
+      },
+      {
+        "id": 37,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 25.9,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 925,
+          "currency": "USD",
+          "amount": -555
+        },
+        "toAccount": {
+          "id": 444,
+          "currency": "EUR",
+          "amount": 14374.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/37"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/37/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/925"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/444"
+          }
+        }
+      },
+      {
+        "id": 38,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 26.6,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 950,
+          "currency": "USD",
+          "amount": -570
+        },
+        "toAccount": {
+          "id": 456,
+          "currency": "EUR",
+          "amount": 15162.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/38"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/38/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/950"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/456"
+          }
+        }
+      },
+      {
+        "id": 39,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 27.3,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 975,
+          "currency": "USD",
+          "amount": -585
+        },
+        "toAccount": {
+          "id": 468,
+          "currency": "EUR",
+          "amount": 15970.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/39"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/39/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/975"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/468"
+          }
+        }
+      },
+      {
+        "id": 40,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 28.0,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1000,
+          "currency": "USD",
+          "amount": -600
+        },
+        "toAccount": {
+          "id": 480,
+          "currency": "EUR",
+          "amount": 16800.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/40"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/40/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1000"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/480"
+          }
+        }
+      },
+      {
+        "id": 41,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 28.7,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1025,
+          "currency": "USD",
+          "amount": -615
+        },
+        "toAccount": {
+          "id": 492,
+          "currency": "EUR",
+          "amount": 17650.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/41"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/41/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1025"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/492"
+          }
+        }
+      },
+      {
+        "id": 42,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 29.4,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1050,
+          "currency": "USD",
+          "amount": -630
+        },
+        "toAccount": {
+          "id": 504,
+          "currency": "EUR",
+          "amount": 18522.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/42"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/42/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1050"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/504"
+          }
+        }
+      },
+      {
+        "id": 43,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 30.1,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1075,
+          "currency": "USD",
+          "amount": -645
+        },
+        "toAccount": {
+          "id": 516,
+          "currency": "EUR",
+          "amount": 19414.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/43"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/43/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1075"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/516"
+          }
+        }
+      },
+      {
+        "id": 44,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 30.8,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1100,
+          "currency": "USD",
+          "amount": -660
+        },
+        "toAccount": {
+          "id": 528,
+          "currency": "EUR",
+          "amount": 20328.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/44"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/44/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1100"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/528"
+          }
+        }
+      },
+      {
+        "id": 45,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 31.5,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1125,
+          "currency": "USD",
+          "amount": -675
+        },
+        "toAccount": {
+          "id": 540,
+          "currency": "EUR",
+          "amount": 21262.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/45"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/45/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1125"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/540"
+          }
+        }
+      },
+      {
+        "id": 46,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 32.2,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1150,
+          "currency": "USD",
+          "amount": -690
+        },
+        "toAccount": {
+          "id": 552,
+          "currency": "EUR",
+          "amount": 22218.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/46"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/46/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1150"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/552"
+          }
+        }
+      },
+      {
+        "id": 47,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 32.9,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1175,
+          "currency": "USD",
+          "amount": -705
+        },
+        "toAccount": {
+          "id": 564,
+          "currency": "EUR",
+          "amount": 23194.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/47"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/47/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1175"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/564"
+          }
+        }
+      },
+      {
+        "id": 48,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 33.6,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1200,
+          "currency": "USD",
+          "amount": -720
+        },
+        "toAccount": {
+          "id": 576,
+          "currency": "EUR",
+          "amount": 24192.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/48"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/48/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1200"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/576"
+          }
+        }
+      },
+      {
+        "id": 49,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 34.3,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1225,
+          "currency": "USD",
+          "amount": -735
+        },
+        "toAccount": {
+          "id": 588,
+          "currency": "EUR",
+          "amount": 25210.5
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/49"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/49/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1225"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/588"
+          }
+        }
+      },
+      {
+        "id": 50,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "type": "EXCHANGE",
+        "exchangeRate": {
+          "rate": 35.0,
+          "fromCurrency": "EUR",
+          "toCurrency": "USD"
+        },
+        "fromAccount": {
+          "id": 1250,
+          "currency": "USD",
+          "amount": -750
+        },
+        "toAccount": {
+          "id": 600,
+          "currency": "EUR",
+          "amount": 26250.0
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/transactions/50"
+          },
+          "entries": {
+            "href": "http://localhost/transactions/50/entries"
+          },
+          "from-account": {
+            "href": "http://localhost/accounts/1250"
+          },
+          "to-account": {
+            "href": "http://localhost/accounts/600"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "first": {
+      "href": "http://localhost/transactions?page=0&size=10"
+    },
+    "prev": {
+      "href": "http://localhost/transactions?page=0&size=10"
+    },
+    "self": {
+      "href": "http://localhost/transactions?page=1&size=10"
+    },
+    "next": {
+      "href": "http://localhost/transactions?page=2&size=10"
+    },
+    "last": {
+      "href": "http://localhost/transactions?page=4&size=10"
+    }
+  },
+  "page": {
+    "size": 10,
+    "totalElements": 50,
+    "totalPages": 5,
+    "number": 1
+  }
+}

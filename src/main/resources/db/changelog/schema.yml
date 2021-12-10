@@ -1,0 +1,197 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: alex
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: client_pkey
+            name: id
+            defaultValueComputed: nextval('client_seq')
+            type: bigint
+        - column:
+            name: version
+            defaultValue: 0
+            type: int
+            constraints:
+              nullable: false
+        - column:
+            name: entity_created
+            defaultValueDate: ${now}
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: entity_updated
+            defaultValueDate: ${now}
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: status
+            type: VARCHAR(32)
+            constraints:
+              nullable: false
+        tableName: client
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: account_pkey
+            name: id
+            defaultValueComputed: nextval('account_seq')
+            type: bigint
+        - column:
+            name: version
+            defaultValue: 0
+            type: int
+            constraints:
+              nullable: false
+        - column:
+            name: entity_created
+            defaultValueDate: ${now}
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: entity_updated
+            defaultValueDate: ${now}
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: balance
+            type: numeric
+            constraints:
+              nullable: false
+        - column:
+            name: currency
+            type: VARCHAR(16)
+            constraints:
+              nullable: false
+        - column:
+            name: status
+            type: VARCHAR(32)
+            constraints:
+              nullable: false
+        - column:
+            name: client_id
+            type: bigint
+            constraints:
+              nullable: false
+              foreignKeyName: fk_account_client
+              references: client(id)
+        tableName: account
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: transaction_pkey
+            name: id
+            defaultValueComputed: nextval('transaction_seq')
+            type: bigint
+        - column:
+            name: entity_created
+            defaultValueDate: ${now}
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: transaction_type
+            type: VARCHAR(32)
+            constraints:
+              nullable: false
+        tableName: transaction
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: exchange_pkey
+            name: id
+            defaultValueComputed: nextval('exchange_rate_seq')
+            type: bigint
+        - column:
+            name: entity_created
+            defaultValueDate: ${now}
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: transaction_id
+            type: bigint
+            constraints:
+              nullable: false
+              foreignKeyName: fk_exchange_rate_transaction
+              references: transaction(id)
+        - column:
+            name: rate
+            type: numeric
+            constraints:
+              nullable: false
+        - column:
+            name: from_currency
+            type: VARCHAR(16)
+            constraints:
+              nullable: false
+        - column:
+            name: to_currency
+            type: VARCHAR(16)
+            constraints:
+              nullable: false
+        tableName: exchange_rate
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: account_entry_pkey
+            name: id
+            defaultValueComputed: nextval('account_entry_seq')
+            type: bigint
+        - column:
+            name: entity_created
+            defaultValueDate: ${now}
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: amount
+            type: numeric
+            constraints:
+              nullable: false
+        - column:
+            name: account_id
+            type: bigint
+            constraints:
+              nullable: false
+              foreignKeyName: fk_account_entry_account
+              references: account(id)
+        - column:
+            name: transaction_id
+            type: bigint
+            constraints:
+              nullable: false
+              foreignKeyName: fk_account_entry_transaction
+              references: transaction(id)
+        - column:
+            name: type
+            type: VARCHAR(32)
+            constraints:
+              nullable: false
+        tableName: account_entry
+    - createSequence:
+        sequenceName: client_seq
+    - createSequence:
+        sequenceName: account_seq
+    - createSequence:
+        sequenceName: account_entry_seq
+    - createSequence:
+        sequenceName: transaction_seq
+    - createSequence:
+        sequenceName: exchange_rate_seq

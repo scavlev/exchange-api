@@ -1,0 +1,21 @@
+{
+  "id": 1,
+  "timestamp": "2021-12-10T20:17:22.476322",
+  "type": "WITHDRAWAL",
+  "fromAccount": {
+    "id": 1,
+    "currency": "USD",
+    "amount": -10
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost/transactions/1"
+    },
+    "entries": {
+      "href": "http://localhost/transactions/1/entries"
+    },
+    "from-account": {
+      "href": "http://localhost/accounts/1"
+    }
+  }
+}

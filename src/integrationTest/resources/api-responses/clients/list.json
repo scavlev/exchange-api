@@ -1,0 +1,629 @@
+{
+  "_embedded": {
+    "clientDataList": [
+      {
+        "id": 1,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/1"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/1/accounts"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/2"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/2/accounts"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/3"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/3/accounts"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/4"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/4/accounts"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/5"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/5/accounts"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/6"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/6/accounts"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/7"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/7/accounts"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/8"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/8/accounts"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/9"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/9/accounts"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/10"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/10/accounts"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/11"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/11/accounts"
+          }
+        }
+      },
+      {
+        "id": 12,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/12"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/12/accounts"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/13"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/13/accounts"
+          }
+        }
+      },
+      {
+        "id": 14,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/14"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/14/accounts"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/15"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/15/accounts"
+          }
+        }
+      },
+      {
+        "id": 16,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/16"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/16/accounts"
+          }
+        }
+      },
+      {
+        "id": 17,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/17"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/17/accounts"
+          }
+        }
+      },
+      {
+        "id": 18,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/18"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/18/accounts"
+          }
+        }
+      },
+      {
+        "id": 19,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/19"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/19/accounts"
+          }
+        }
+      },
+      {
+        "id": 20,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/20"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/20/accounts"
+          }
+        }
+      },
+      {
+        "id": 21,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/21"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/21/accounts"
+          }
+        }
+      },
+      {
+        "id": 22,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/22"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/22/accounts"
+          }
+        }
+      },
+      {
+        "id": 23,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/23"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/23/accounts"
+          }
+        }
+      },
+      {
+        "id": 24,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/24"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/24/accounts"
+          }
+        }
+      },
+      {
+        "id": 25,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/25"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/25/accounts"
+          }
+        }
+      },
+      {
+        "id": 26,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/26"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/26/accounts"
+          }
+        }
+      },
+      {
+        "id": 27,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/27"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/27/accounts"
+          }
+        }
+      },
+      {
+        "id": 28,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/28"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/28/accounts"
+          }
+        }
+      },
+      {
+        "id": 29,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/29"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/29/accounts"
+          }
+        }
+      },
+      {
+        "id": 30,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/30"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/30/accounts"
+          }
+        }
+      },
+      {
+        "id": 31,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/31"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/31/accounts"
+          }
+        }
+      },
+      {
+        "id": 32,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/32"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/32/accounts"
+          }
+        }
+      },
+      {
+        "id": 33,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/33"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/33/accounts"
+          }
+        }
+      },
+      {
+        "id": 34,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/34"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/34/accounts"
+          }
+        }
+      },
+      {
+        "id": 35,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/35"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/35/accounts"
+          }
+        }
+      },
+      {
+        "id": 36,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/36"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/36/accounts"
+          }
+        }
+      },
+      {
+        "id": 37,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/37"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/37/accounts"
+          }
+        }
+      },
+      {
+        "id": 38,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/38"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/38/accounts"
+          }
+        }
+      },
+      {
+        "id": 39,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/39"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/39/accounts"
+          }
+        }
+      },
+      {
+        "id": 40,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/40"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/40/accounts"
+          }
+        }
+      },
+      {
+        "id": 41,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/41"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/41/accounts"
+          }
+        }
+      },
+      {
+        "id": 42,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/42"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/42/accounts"
+          }
+        }
+      },
+      {
+        "id": 43,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/43"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/43/accounts"
+          }
+        }
+      },
+      {
+        "id": 44,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/44"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/44/accounts"
+          }
+        }
+      },
+      {
+        "id": 45,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/45"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/45/accounts"
+          }
+        }
+      },
+      {
+        "id": 46,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/46"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/46/accounts"
+          }
+        }
+      },
+      {
+        "id": 47,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/47"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/47/accounts"
+          }
+        }
+      },
+      {
+        "id": 48,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/48"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/48/accounts"
+          }
+        }
+      },
+      {
+        "id": 49,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/49"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/49/accounts"
+          }
+        }
+      },
+      {
+        "id": 50,
+        "status": "ACTIVE",
+        "_links": {
+          "self": {
+            "href": "http://localhost/clients/50"
+          },
+          "accounts": {
+            "href": "http://localhost/clients/50/accounts"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "first": {
+      "href": "http://localhost/clients?page=0&size=10"
+    },
+    "prev": {
+      "href": "http://localhost/clients?page=0&size=10"
+    },
+    "self": {
+      "href": "http://localhost/clients?page=1&size=10"
+    },
+    "next": {
+      "href": "http://localhost/clients?page=2&size=10"
+    },
+    "last": {
+      "href": "http://localhost/clients?page=4&size=10"
+    }
+  },
+  "page": {
+    "size": 10,
+    "totalElements": 50,
+    "totalPages": 5,
+    "number": 1
+  }
+}

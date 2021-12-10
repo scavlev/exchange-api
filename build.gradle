@@ -1,0 +1,86 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'idea'
+    id 'org.springframework.boot' version '2.6.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'com.github.ben-manes.versions' version '0.39.0'
+}
+
+group 'com.scavlev.exchangeapi'
+version '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    integrationTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
+configurations {
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom runtimeOnly
+}
+
+idea {
+    module {
+        testSourceDirs += sourceSets.integrationTest.java.srcDirs
+        testSourceDirs += sourceSets.integrationTest.groovy.srcDirs
+        testSourceDirs += sourceSets.integrationTest.resources.srcDirs
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'com.h2database:h2'
+    implementation 'org.liquibase:liquibase-core'
+
+    implementation 'io.projectreactor:reactor-core'
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.13'
+    implementation 'org.springdoc:springdoc-openapi-hateoas:1.5.13'
+
+    implementation 'io.github.openfeign:feign-jackson:11.7'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    testImplementation 'org.codehaus.groovy:groovy:3.0.9'
+    testImplementation 'org.spockframework:spock-core:2.1-M2-groovy-3.0'
+    integrationTestImplementation 'org.spockframework:spock-spring:2.1-M2-groovy-3.0'
+    integrationTestImplementation 'org.springframework.boot:spring-boot-starter-test'
+    integrationTestImplementation 'com.github.tomakehurst:wiremock-jre8:2.32.0'
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
+tasks.register('integrationTest', Test) {
+    description = 'Runs integration tests.'
+    group = 'verification'
+
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    shouldRunAfter test
+}
+
+check.dependsOn integrationTest
+
+wrapper {
+    gradleVersion = '7.3.1'
+}

@@ -1,0 +1,9 @@
+databaseChangeLog:
+- property:
+    name: now
+    value: now()
+    dbms: h2
+- include:
+    file: db/changelog/schema.yml
+- include:
+    file: db/demo-data/index.yml

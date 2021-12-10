@@ -1,0 +1,4 @@
+app:
+  freecurrencyapi:
+    url: http://localhost:9090/api/v2/
+    api_key: <super_secret>

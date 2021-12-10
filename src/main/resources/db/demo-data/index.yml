@@ -1,0 +1,4 @@
+databaseChangeLog:
+- context: demo
+- include:
+    file: db/demo-data/demo-data.yml

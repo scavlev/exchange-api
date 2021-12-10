@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "status": "DEACTIVATED",
+  "_links": {
+    "self": {
+      "href": "http://localhost/clients/1"
+    },
+    "accounts": {
+      "href": "http://localhost/clients/1/accounts"
+    }
+  }
+}

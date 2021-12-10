@@ -1,0 +1,829 @@
+{
+  "_embedded": {
+    "accountEntryDataList": [
+      {
+        "accountId": 1,
+        "transactionId": 16,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 77.3,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/16"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 32,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 154.6,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/32"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 48,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 231.9,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/48"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 64,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 309.2,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/64"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 80,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 386.5,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/80"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 96,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 463.8,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/96"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 112,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 541.1,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/112"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 128,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 618.4,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/128"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 144,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 695.7,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/144"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 160,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 773.0,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/160"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 176,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 850.3,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/176"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 192,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 927.6,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/192"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 208,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1004.9,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/208"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 224,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1082.2,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/224"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 240,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1159.5,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/240"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 256,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1236.8,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/256"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 272,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1314.1,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/272"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 288,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1391.4,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/288"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 304,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1468.7,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/304"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 320,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1546.0,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/320"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 336,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1623.3,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/336"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 352,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1700.6,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/352"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 368,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1777.9,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/368"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 384,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1855.2,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/384"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 400,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 1932.5,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/400"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 416,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2009.8,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/416"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 432,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2087.1,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/432"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 448,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2164.4,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/448"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 464,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2241.7,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/464"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 480,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2319.0,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/480"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 496,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2396.3,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/496"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 512,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2473.6,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/512"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 528,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2550.9,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/528"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 544,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2628.2,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/544"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 560,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2705.5,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/560"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 576,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2782.8,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/576"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 592,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2860.1,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/592"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 608,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 2937.4,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/608"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 624,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3014.7,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/624"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 640,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3092.0,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/640"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 656,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3169.3,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/656"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 672,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3246.6,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/672"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 688,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3323.9,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/688"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 704,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3401.2,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/704"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 720,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3478.5,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/720"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 736,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3555.8,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/736"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 752,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3633.1,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/752"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 768,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3710.4,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/768"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 784,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3787.7,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/784"
+          }
+        }
+      },
+      {
+        "accountId": 1,
+        "transactionId": 800,
+        "timestamp": "2021-12-10T20:17:22.476322",
+        "amount": 3865.0,
+        "currency": "EUR",
+        "type": "DEBIT",
+        "_links": {
+          "account": {
+            "href": "http://localhost/accounts/1"
+          },
+          "transaction": {
+            "href": "http://localhost/transactions/800"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "first": {
+      "href": "http://localhost/accounts/1/entries?page=0&size=10"
+    },
+    "prev": {
+      "href": "http://localhost/accounts/1/entries?page=0&size=10"
+    },
+    "self": {
+      "href": "http://localhost/accounts/1/entries?page=1&size=10"
+    },
+    "next": {
+      "href": "http://localhost/accounts/1/entries?page=2&size=10"
+    },
+    "last": {
+      "href": "http://localhost/accounts/1/entries?page=4&size=10"
+    }
+  },
+  "page": {
+    "size": 10,
+    "totalElements": 50,
+    "totalPages": 5,
+    "number": 1
+  }
+}
