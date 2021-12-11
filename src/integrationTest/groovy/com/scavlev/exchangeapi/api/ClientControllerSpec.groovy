@@ -73,7 +73,7 @@ class ClientControllerSpec extends Specification {
                 .andReturn()
     }
 
-    def "should return 404 if client is not found"() {
+    def "should return status code 404 if client is not found"() {
         given:
         1 * findClient.apply(_) >> { Long id ->
             throw new ClientNotFoundException(id)
@@ -158,7 +158,7 @@ class ClientControllerSpec extends Specification {
                 .andReturn()
     }
 
-    def "should return 404 if there is no client to update"() {
+    def "should return status code 404 if there is no client to update"() {
         given:
         1 * updateClient.apply(_ as Long, _ as UpdateClientRequest) >> { Long id, UpdateClientRequest updateClientRequest ->
             throw new ClientNotFoundException(id)

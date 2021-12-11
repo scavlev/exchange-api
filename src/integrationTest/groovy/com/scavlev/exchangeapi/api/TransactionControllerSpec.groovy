@@ -76,7 +76,7 @@ class TransactionControllerSpec extends Specification {
                 .andReturn()
     }
 
-    def "should return 404 if transaction is not found"() {
+    def "should return status code 404 if transaction is not found"() {
         given:
         1 * findTransaction.apply(_) >> { Long id ->
             throw new TransactionNotFoundException(id)

@@ -160,7 +160,7 @@ class AccountControllerSpec extends Specification {
                 .andReturn()
     }
 
-    def "should return 404 if there is no account to update"() {
+    def "should return status code 404 if there is no account to update"() {
         given:
         1 * updateAccount.apply(_ as Long, _ as UpdateAccountRequest) >> { Long id, UpdateAccountRequest updateAccountRequest ->
             throw new AccountNotFoundException(id)
@@ -193,7 +193,7 @@ class AccountControllerSpec extends Specification {
                 .andReturn()
     }
 
-    def "should return 400 if client not found while creating account"() {
+    def "should return status code 400 if client not found while creating account"() {
         given:
         1 * supportedCurrencies.getCurrencies() >> ["BTC", "EUR", "USD"]
         1 * openAccount.apply(_ as OpenAccountRequest) >> { OpenAccountRequest openAccountRequest ->
@@ -208,7 +208,7 @@ class AccountControllerSpec extends Specification {
                 .andReturn()
     }
 
-    def "should return 400 if currency is not supported"() {
+    def "should return status code 400 if currency is not supported"() {
         given:
         1 * supportedCurrencies.getCurrencies() >> ["EUR", "USD"]
         0 * openAccount.apply(_ as OpenAccountRequest)
