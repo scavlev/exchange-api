@@ -6,8 +6,9 @@ import com.scavlev.exchangeapi.account.UpdateAccountRequest
 import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.account.domain.AccountStatus
-import com.scavlev.exchangeapi.client.domain.Client
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createAccount
 
 class UpdateAccountSpec extends Specification {
 
@@ -18,7 +19,7 @@ class UpdateAccountSpec extends Specification {
         given:
         def accountId = 1
         UpdateAccountRequest updateAccountRequest = new UpdateAccountRequest(AccountStatus.ACTIVE)
-        Account existingAccount = new Account(client: new Client(), status: AccountStatus.DEACTIVATED)
+        Account existingAccount = createAccount(id: accountId, status: AccountStatus.DEACTIVATED)
 
         when:
         AccountData accountData = updateAccount.apply(accountId, updateAccountRequest)

@@ -1,17 +1,15 @@
 package com.scavlev.exchangeapi.client
 
-
 import com.scavlev.exchangeapi.client.domain.Client
-import com.scavlev.exchangeapi.client.domain.ClientStatus
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createClient
 
 class ClientDataSpec extends Specification {
 
     def "should correctly transform client data"() {
         given:
-        Client client = Mock()
-        client.id >> 1
-        client.status >> ClientStatus.ACTIVE
+        Client client = createClient()
 
         when:
         ClientData clientData = ClientData.fromClient(client)

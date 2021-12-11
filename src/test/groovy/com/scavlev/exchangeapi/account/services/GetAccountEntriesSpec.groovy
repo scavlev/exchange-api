@@ -2,12 +2,17 @@ package com.scavlev.exchangeapi.account.services
 
 import com.scavlev.exchangeapi.account.AccountEntriesRetrievalException
 import com.scavlev.exchangeapi.account.AccountEntryData
-import com.scavlev.exchangeapi.account.domain.*
-import com.scavlev.exchangeapi.transaction.domain.Transaction
+import com.scavlev.exchangeapi.account.domain.Account
+import com.scavlev.exchangeapi.account.domain.AccountEntryRepository
+import com.scavlev.exchangeapi.account.domain.AccountRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
 import org.springframework.data.domain.PageRequest
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createAccount
+import static com.scavlev.exchangeapi.FixtureHelper.createAccountEntry
+import static com.scavlev.exchangeapi.account.AccountEntryData.fromAccountEntry
 
 class GetAccountEntriesSpec extends Specification {
 
@@ -33,42 +38,24 @@ class GetAccountEntriesSpec extends Specification {
         def accountId = 1
         def pageRequest = PageRequest.of(0, 10)
 
-        Transaction transaction = Mock()
-        transaction.id >> 1
-
-        Account account = Mock()
-        account.id >> accountId
-        account.currency >> "EUR"
-
-        AccountEntry debitEntry = Mock()
-        debitEntry.transaction >> transaction
-        debitEntry.amount >> 10
-        debitEntry.type >> AccountEntryType.DEBIT
-        debitEntry.account >> account
-
-        AccountEntry creditEntry = Mock()
-        creditEntry.transaction >> transaction
-        creditEntry.amount >> 20
-        creditEntry.type >> AccountEntryType.CREDIT
-        creditEntry.account >> account
+        Account account = createAccount().with {
+            entries.addAll(
+                    createAccountEntry(id: 1, account: it),
+                    createAccountEntry(id: 2, account: it)
+            )
+            it
+        }
 
         when:
         Page<AccountEntryData> accountEntryDataList = getAccountEntries.apply(accountId, pageRequest)
 
         then:
         1 * accountRepository.existsById(accountId) >> true
-        1 * accountEntryRepository.findByAccountId(accountId, pageRequest) >> new PageImpl<>([debitEntry, creditEntry])
+        1 * accountEntryRepository.findByAccountId(accountId, pageRequest) >> new PageImpl<>(account.entries)
         accountEntryDataList != null
         accountEntryDataList.size() == 2
-        accountEntryDataList[0].amount == debitEntry.amount
-        accountEntryDataList[0].currency == account.currency
-        accountEntryDataList[0].type == debitEntry.type
-        accountEntryDataList[0].accountId == account.id
-        accountEntryDataList[0].transactionId == transaction.id
-        accountEntryDataList[1].amount == creditEntry.amount
-        accountEntryDataList[1].currency == account.currency
-        accountEntryDataList[1].type == creditEntry.type
-        accountEntryDataList[1].accountId == account.id
-        accountEntryDataList[1].transactionId == transaction.id
+        accountEntryDataList[0] == fromAccountEntry(account.entries[0])
+        accountEntryDataList[1] == fromAccountEntry(account.entries[1])
     }
+
 }

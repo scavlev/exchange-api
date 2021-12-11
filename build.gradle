@@ -62,8 +62,8 @@ dependencies {
 
     testImplementation 'org.codehaus.groovy:groovy:3.0.9'
     testImplementation 'org.spockframework:spock-core:2.1-M2-groovy-3.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     integrationTestImplementation 'org.spockframework:spock-spring:2.1-M2-groovy-3.0'
-    integrationTestImplementation 'org.springframework.boot:spring-boot-starter-test'
     integrationTestImplementation 'com.github.tomakehurst:wiremock-jre8:2.32.0'
 }
 

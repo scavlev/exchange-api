@@ -1,7 +1,6 @@
 package com.scavlev.exchangeapi.transaction.services
 
 import com.scavlev.exchangeapi.account.DeactivatedAccountAccessException
-import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountEntryType
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.account.domain.AccountStatus
@@ -11,6 +10,8 @@ import com.scavlev.exchangeapi.transaction.domain.Transaction
 import com.scavlev.exchangeapi.transaction.domain.TransactionRepository
 import com.scavlev.exchangeapi.transaction.domain.TransactionType
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createAccount
 
 class DepositFundsSpec extends Specification {
 
@@ -36,7 +37,7 @@ class DepositFundsSpec extends Specification {
         given:
         def accountId = 1
         def amount = 10.11
-        accountRepository.findById(accountId) >> Optional.of(new Account(status: AccountStatus.DEACTIVATED))
+        accountRepository.findById(accountId) >> Optional.of(createAccount(status: AccountStatus.DEACTIVATED))
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 
         when:
@@ -50,7 +51,7 @@ class DepositFundsSpec extends Specification {
         given:
         def accountId = 1
         def amount = 10.11
-        def account = new Account(balance: 0.0)
+        def account = createAccount(balance: 0.0)
         accountRepository.findById(accountId) >> Optional.of(account)
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 

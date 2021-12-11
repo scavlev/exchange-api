@@ -1,6 +1,6 @@
 package com.scavlev.exchangeapi.transaction.services
 
-import com.scavlev.exchangeapi.account.domain.Account
+
 import com.scavlev.exchangeapi.account.domain.AccountEntryType
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.transaction.OperationOnNonExistentAccountException
@@ -9,6 +9,8 @@ import com.scavlev.exchangeapi.transaction.domain.Transaction
 import com.scavlev.exchangeapi.transaction.domain.TransactionRepository
 import com.scavlev.exchangeapi.transaction.domain.TransactionType
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createAccount
 
 class ExchangeFundsSpec extends Specification {
 
@@ -23,7 +25,7 @@ class ExchangeFundsSpec extends Specification {
         def amount = 10.11
         def rate = 0.5
         accountRepository.findById(fromAccountId) >> Optional.empty()
-        accountRepository.findById(toAccountId) >> Optional.of(new Account())
+        accountRepository.findById(toAccountId) >> Optional.of(createAccount(id: toAccountId))
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
@@ -39,7 +41,7 @@ class ExchangeFundsSpec extends Specification {
         def toAccountId = 2
         def amount = 10.11
         def rate = 0.5
-        accountRepository.findById(fromAccountId) >> Optional.of(new Account())
+        accountRepository.findById(fromAccountId) >> Optional.of(createAccount(id: fromAccountId))
         accountRepository.findById(toAccountId) >> Optional.empty()
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
@@ -56,8 +58,8 @@ class ExchangeFundsSpec extends Specification {
         def toAccountId = 2
         def amount = 0.01
         def rate = 0.5
-        accountRepository.findById(fromAccountId) >> Optional.of(new Account(balance: 0))
-        accountRepository.findById(toAccountId) >> Optional.of(new Account(balance: 0))
+        accountRepository.findById(fromAccountId) >> Optional.of(createAccount(id: fromAccountId, balance: 0))
+        accountRepository.findById(toAccountId) >> Optional.of(createAccount(id: toAccountId, balance: 0))
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
@@ -70,11 +72,9 @@ class ExchangeFundsSpec extends Specification {
     def "should correctly create and save exchange transaction"() {
         given:
         def fromAccountId = 1
-        def fromAccountCurrency = "USD"
-        def fromAccount = new Account(balance: 20, currency: fromAccountCurrency)
+        def fromAccount = createAccount(id: fromAccountId, balance: 20, currency: "USD")
         def toAccountId = 2
-        def toAccountCurrency = "EUR"
-        def toAccount = new Account(balance: 20, currency: toAccountCurrency)
+        def toAccount = createAccount(id: toAccountId, balance: 20, currency: "EUR")
         def amount = 10.0
         def rate = 0.5
         accountRepository.findById(fromAccountId) >> Optional.of(fromAccount)
@@ -95,8 +95,8 @@ class ExchangeFundsSpec extends Specification {
             assert transaction.creditAccountEntry.get().amount == amount.negate()
             assert transaction.creditAccountEntry.get().type == AccountEntryType.CREDIT
             assert transaction.exchangeRate.present
-            assert transaction.exchangeRate.get().fromCurrency == fromAccountCurrency
-            assert transaction.exchangeRate.get().toCurrency == toAccountCurrency
+            assert transaction.exchangeRate.get().fromCurrency == fromAccount.currency
+            assert transaction.exchangeRate.get().toCurrency == toAccount.currency
             assert transaction.exchangeRate.get().rate == rate
             transaction
         }

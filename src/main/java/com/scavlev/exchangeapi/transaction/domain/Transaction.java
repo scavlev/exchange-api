@@ -14,16 +14,18 @@ import java.util.Optional;
 @Entity
 @Builder
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @SequenceGenerator(name = "sequence", sequenceName = "transaction_seq", allocationSize = 1)
 public class Transaction extends BaseEntity {
 
     @OneToMany(mappedBy = "transaction", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
     private final List<AccountEntry> entries = new ArrayList<>();
+
     @NotNull
     @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
+
     @Setter
     @OneToOne(mappedBy = "transaction", cascade = {CascadeType.PERSIST})
     private ExchangeRate exchangeRate;

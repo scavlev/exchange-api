@@ -11,9 +11,7 @@ class SameAccountTransactionValidatorSpec extends Specification {
 
     def "should return false if to and from accounts are the same"() {
         given:
-        ProcessTransactionRequest processTransactionRequest = Mock()
-        processTransactionRequest.fromAccount >> 1
-        processTransactionRequest.toAccount >> 1
+        ProcessTransactionRequest processTransactionRequest = new ProcessTransactionRequest(1L, 1L, 10.0)
         ConstraintValidatorContext context = Mock()
 
         when:
@@ -27,9 +25,7 @@ class SameAccountTransactionValidatorSpec extends Specification {
 
     def "should return true if to and from accounts are different"() {
         given:
-        ProcessTransactionRequest processTransactionRequest = Mock()
-        processTransactionRequest.fromAccount >> 1
-        processTransactionRequest.toAccount >> 2
+        ProcessTransactionRequest processTransactionRequest = new ProcessTransactionRequest(1L, 2L, 10.0)
         ConstraintValidatorContext context = Mock()
 
         when:

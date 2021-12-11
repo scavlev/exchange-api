@@ -14,21 +14,25 @@ import java.util.List;
 @Entity
 @Builder
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @SequenceGenerator(name = "sequence", sequenceName = "account_seq", allocationSize = 1)
 public class Account extends MutableBaseEntity {
 
     @OneToMany(mappedBy = "account")
     private final List<AccountEntry> entries = new ArrayList<>();
+
     @NotNull
     @ManyToOne
     private Client client;
+
     @NotNull
     @PositiveOrZero
     private BigDecimal balance;
+
     @NotNull
     private String currency;
+
     @NotNull
     @Setter
     @Enumerated(EnumType.STRING)

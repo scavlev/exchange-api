@@ -7,6 +7,8 @@ import com.scavlev.exchangeapi.client.domain.Client
 import com.scavlev.exchangeapi.client.domain.ClientRepository
 import spock.lang.Specification
 
+import static com.scavlev.exchangeapi.FixtureHelper.createClient
+
 class DeactivateClientSpec extends Specification {
 
     ClientRepository clientRepository = Mock()
@@ -16,8 +18,7 @@ class DeactivateClientSpec extends Specification {
     def "should deactivate client and all its accounts"() {
         given:
         def clientId = 1
-        Client client = Mock()
-
+        Client client = createClient(id: clientId)
 
         when:
         deactivateClient.apply(clientId)

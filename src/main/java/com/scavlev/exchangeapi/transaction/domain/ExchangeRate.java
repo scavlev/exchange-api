@@ -1,10 +1,7 @@
 package com.scavlev.exchangeapi.transaction.domain;
 
 import com.scavlev.exchangeapi.domain.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -15,8 +12,8 @@ import java.math.BigDecimal;
 @Entity
 @Builder
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @SequenceGenerator(name = "sequence", sequenceName = "exchange_rate_seq", allocationSize = 1)
 public class ExchangeRate extends BaseEntity {
 

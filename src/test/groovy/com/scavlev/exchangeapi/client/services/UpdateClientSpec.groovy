@@ -9,6 +9,8 @@ import com.scavlev.exchangeapi.client.domain.ClientRepository
 import com.scavlev.exchangeapi.client.domain.ClientStatus
 import spock.lang.Specification
 
+import static com.scavlev.exchangeapi.FixtureHelper.createClient
+
 class UpdateClientSpec extends Specification {
 
     ClientRepository clientRepository = Mock()
@@ -18,7 +20,7 @@ class UpdateClientSpec extends Specification {
         given:
         def clientId = 1
         UpdateClientRequest updateClientRequest = new UpdateClientRequest(ClientStatus.ACTIVE)
-        Client existingClient = new Client(status: ClientStatus.DEACTIVATED)
+        Client existingClient = createClient(status: ClientStatus.DEACTIVATED)
 
         when:
         ClientData clientData = updateClient.apply(clientId, updateClientRequest)

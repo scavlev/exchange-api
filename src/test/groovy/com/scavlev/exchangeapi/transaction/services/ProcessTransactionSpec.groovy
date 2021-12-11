@@ -1,7 +1,6 @@
 package com.scavlev.exchangeapi.transaction.services
 
 import com.scavlev.exchangeapi.account.DeactivatedAccountAccessException
-import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.account.domain.AccountStatus
 import com.scavlev.exchangeapi.currency.CurrencyExchangeService
@@ -9,6 +8,8 @@ import com.scavlev.exchangeapi.transaction.InsufficientFundsException
 import com.scavlev.exchangeapi.transaction.OperationOnNonExistentAccountException
 import com.scavlev.exchangeapi.transaction.ProcessTransactionRequest
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createAccount
 
 class ProcessTransactionSpec extends Specification {
 
@@ -29,7 +30,7 @@ class ProcessTransactionSpec extends Specification {
         def toAccountId = 2
         def amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.empty()
-        accountRepository.findById(toAccountId) >> Optional.of(new Account())
+        accountRepository.findById(toAccountId) >> Optional.of(createAccount())
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
@@ -44,7 +45,7 @@ class ProcessTransactionSpec extends Specification {
         def fromAccountId = 1
         def toAccountId = 2
         def amount = 10.11
-        accountRepository.findById(fromAccountId) >> Optional.of(new Account())
+        accountRepository.findById(fromAccountId) >> Optional.of(createAccount())
         accountRepository.findById(toAccountId) >> Optional.empty()
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
@@ -60,8 +61,8 @@ class ProcessTransactionSpec extends Specification {
         def fromAccountId = 1
         def toAccountId = 2
         def amount = 10.11
-        accountRepository.findById(fromAccountId) >> Optional.of(new Account(status: AccountStatus.DEACTIVATED))
-        accountRepository.findById(toAccountId) >> Optional.of(new Account())
+        accountRepository.findById(fromAccountId) >> Optional.of(createAccount(status: AccountStatus.DEACTIVATED))
+        accountRepository.findById(toAccountId) >> Optional.of(createAccount())
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
@@ -76,8 +77,8 @@ class ProcessTransactionSpec extends Specification {
         def fromAccountId = 1
         def toAccountId = 2
         def amount = 10.11
-        accountRepository.findById(fromAccountId) >> Optional.of(new Account(balance: 20))
-        accountRepository.findById(toAccountId) >> Optional.of(new Account(status: AccountStatus.DEACTIVATED))
+        accountRepository.findById(fromAccountId) >> Optional.of(createAccount())
+        accountRepository.findById(toAccountId) >> Optional.of(createAccount(status: AccountStatus.DEACTIVATED))
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
@@ -92,8 +93,8 @@ class ProcessTransactionSpec extends Specification {
         def fromAccountId = 1
         def toAccountId = 2
         def amount = 10.11
-        accountRepository.findById(fromAccountId) >> Optional.of(new Account(balance: 5))
-        accountRepository.findById(toAccountId) >> Optional.of(new Account())
+        accountRepository.findById(fromAccountId) >> Optional.of(createAccount(balance: 5))
+        accountRepository.findById(toAccountId) >> Optional.of(createAccount())
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
@@ -108,8 +109,8 @@ class ProcessTransactionSpec extends Specification {
         def fromAccountId = 1
         def toAccountId = 2
         def amount = 10.11
-        accountRepository.findById(fromAccountId) >> Optional.of(new Account(currency: "same", balance: 20))
-        accountRepository.findById(toAccountId) >> Optional.of(new Account(currency: "same"))
+        accountRepository.findById(fromAccountId) >> Optional.of(createAccount(currency: "same", balance: 20))
+        accountRepository.findById(toAccountId) >> Optional.of(createAccount(currency: "same"))
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
@@ -125,8 +126,8 @@ class ProcessTransactionSpec extends Specification {
         def fromAccountId = 1
         def toAccountId = 2
         def amount = 10.11
-        def fromAccount = new Account(currency: "same", balance: 20)
-        def toAccount = new Account(currency: "different")
+        def fromAccount = createAccount(currency: "same", balance: 20)
+        def toAccount = createAccount(currency: "different")
         def rate = 0.5
         accountRepository.findById(fromAccountId) >> Optional.of(fromAccount)
         accountRepository.findById(toAccountId) >> Optional.of(toAccount)

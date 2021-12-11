@@ -10,6 +10,8 @@ import com.scavlev.exchangeapi.client.domain.Client
 import com.scavlev.exchangeapi.client.domain.ClientRepository
 import spock.lang.Specification
 
+import static com.scavlev.exchangeapi.FixtureHelper.createClient
+
 class OpenAccountSpec extends Specification {
 
     AccountRepository accountRepository = Mock()
@@ -20,14 +22,13 @@ class OpenAccountSpec extends Specification {
         given:
         def clientId = 1
         OpenAccountRequest request = new OpenAccountRequest(clientId, "EUR")
-        Client client = Mock()
-        client.id >> clientId
-        clientRepository.findById(clientId) >> Optional.of(client)
+        Client client = createClient()
 
         when:
         AccountData accountData = openAccount.apply(request)
 
         then:
+        1 * clientRepository.findById(clientId) >> Optional.of(client)
         1 * accountRepository.saveAndFlush(_) >> { Account account ->
             assert account.client == client
             assert account.currency == request.currency

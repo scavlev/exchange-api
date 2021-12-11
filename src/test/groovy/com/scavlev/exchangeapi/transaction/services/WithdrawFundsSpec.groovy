@@ -1,7 +1,6 @@
 package com.scavlev.exchangeapi.transaction.services
 
 import com.scavlev.exchangeapi.account.DeactivatedAccountAccessException
-import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountEntryType
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.account.domain.AccountStatus
@@ -12,6 +11,8 @@ import com.scavlev.exchangeapi.transaction.domain.Transaction
 import com.scavlev.exchangeapi.transaction.domain.TransactionRepository
 import com.scavlev.exchangeapi.transaction.domain.TransactionType
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createAccount
 
 class WithdrawFundsSpec extends Specification {
 
@@ -37,7 +38,7 @@ class WithdrawFundsSpec extends Specification {
         given:
         def accountId = 1
         def amount = 10.11
-        accountRepository.findById(accountId) >> Optional.of(new Account(status: AccountStatus.DEACTIVATED))
+        accountRepository.findById(accountId) >> Optional.of(createAccount(status: AccountStatus.DEACTIVATED))
         WithdrawalTransactionRequest request = new WithdrawalTransactionRequest(accountId, amount)
 
         when:
@@ -51,7 +52,7 @@ class WithdrawFundsSpec extends Specification {
         given:
         def accountId = 1
         def amount = 10.11
-        accountRepository.findById(accountId) >> Optional.of(new Account(balance: 10.0))
+        accountRepository.findById(accountId) >> Optional.of(createAccount(balance: 10.0))
         WithdrawalTransactionRequest request = new WithdrawalTransactionRequest(accountId, amount)
 
         when:
@@ -65,7 +66,7 @@ class WithdrawFundsSpec extends Specification {
         given:
         def accountId = 1
         def amount = 10.11
-        def account = new Account(balance: 20.0)
+        def account = createAccount(balance: 20.0)
         accountRepository.findById(accountId) >> Optional.of(account)
         WithdrawalTransactionRequest request = new WithdrawalTransactionRequest(accountId, amount)
 
@@ -77,6 +78,7 @@ class WithdrawFundsSpec extends Specification {
             assert transaction.transactionType == TransactionType.WITHDRAWAL
             assert transaction.entries.size() == 1
             assert transaction.creditAccountEntry.present
+            assert transaction.creditAccountEntry.get().account == account
             assert transaction.creditAccountEntry.get().amount == amount.negate()
             assert transaction.creditAccountEntry.get().type == AccountEntryType.CREDIT
             transaction

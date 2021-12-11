@@ -1,10 +1,11 @@
 package com.scavlev.exchangeapi.client.services
 
-
 import com.scavlev.exchangeapi.client.domain.Client
 import com.scavlev.exchangeapi.client.domain.ClientRepository
-import com.scavlev.exchangeapi.client.domain.ClientStatus
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createClient
+import static com.scavlev.exchangeapi.client.ClientData.fromClient
 
 class FindClientSpec extends Specification {
 
@@ -26,9 +27,7 @@ class FindClientSpec extends Specification {
     def "should return client data if client is found"() {
         given:
         def clientId = 1
-        Client client = Mock()
-        client.id >> 1
-        client.status >> ClientStatus.ACTIVE
+        Client client = createClient(id: clientId)
 
         when:
         def clientData = findClient.apply(clientId)
@@ -36,10 +35,7 @@ class FindClientSpec extends Specification {
         then:
         1 * clientRepository.findById(clientId) >> Optional.of(client)
         clientData.present
-        with(clientData.get()) {
-            id == client.id
-            status == client.status
-        }
+        clientData.get() == fromClient(client)
     }
 
 }

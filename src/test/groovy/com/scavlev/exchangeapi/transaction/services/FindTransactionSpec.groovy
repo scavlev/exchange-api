@@ -4,6 +4,9 @@ import com.scavlev.exchangeapi.transaction.domain.Transaction
 import com.scavlev.exchangeapi.transaction.domain.TransactionRepository
 import spock.lang.Specification
 
+import static com.scavlev.exchangeapi.FixtureHelper.createTransaction
+import static com.scavlev.exchangeapi.transaction.TransactionData.fromTransaction
+
 class FindTransactionSpec extends Specification {
 
     TransactionRepository transactionRepository = Mock()
@@ -24,11 +27,7 @@ class FindTransactionSpec extends Specification {
     def "should return transaction data if transaction is found"() {
         given:
         def transactionId = 1
-        Transaction transaction = Mock()
-        transaction.id >> transactionId
-        transaction.exchangeRate >> Optional.empty()
-        transaction.debitAccountEntry >> Optional.empty()
-        transaction.creditAccountEntry >> Optional.empty()
+        Transaction transaction = createTransaction()
 
         when:
         def transactionData = findTransaction.apply(transactionId)
@@ -36,7 +35,7 @@ class FindTransactionSpec extends Specification {
         then:
         1 * transactionRepository.findById(transactionId) >> Optional.of(transaction)
         transactionData.present
-        transactionData.get().id == transactionId
+        transactionData.get() == fromTransaction(transaction)
     }
 
 }

@@ -12,13 +12,14 @@ import java.util.List;
 @Entity
 @Builder
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @SequenceGenerator(name = "sequence", sequenceName = "client_seq", allocationSize = 1)
 public class Client extends MutableBaseEntity {
 
     @OneToMany(mappedBy = "client")
     private final List<Account> accounts = new ArrayList<>();
+
     @NotNull
     @Setter
     @Enumerated(EnumType.STRING)

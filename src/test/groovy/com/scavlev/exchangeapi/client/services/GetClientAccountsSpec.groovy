@@ -1,12 +1,14 @@
 package com.scavlev.exchangeapi.client.services
 
 import com.scavlev.exchangeapi.account.AccountData
-import com.scavlev.exchangeapi.account.domain.Account
-import com.scavlev.exchangeapi.account.domain.AccountStatus
 import com.scavlev.exchangeapi.client.ClientDoesntExistException
 import com.scavlev.exchangeapi.client.domain.Client
 import com.scavlev.exchangeapi.client.domain.ClientRepository
 import spock.lang.Specification
+
+import static com.scavlev.exchangeapi.FixtureHelper.createAccount
+import static com.scavlev.exchangeapi.FixtureHelper.createClient
+import static com.scavlev.exchangeapi.account.AccountData.fromAccount
 
 class GetClientAccountsSpec extends Specification {
 
@@ -29,24 +31,13 @@ class GetClientAccountsSpec extends Specification {
         given:
         def clientId = 1
 
-        Client client = Mock()
-        client.id >> clientId
-
-        Account account1 = Mock()
-        account1.id >> 1
-        account1.client >> client
-        account1.currency >> "EUR"
-        account1.balance >> 43
-        account1.status >> AccountStatus.ACTIVE
-
-        Account account2 = Mock()
-        account2.id >> 2
-        account2.client >> client
-        account2.currency >> "USD"
-        account2.balance >> 23
-        account2.status >> AccountStatus.DEACTIVATED
-
-        client.accounts >> [account1, account2]
+        Client client = createClient(id: clientId).with {
+            accounts.addAll(
+                    createAccount(id: 1, client: it),
+                    createAccount(id: 2, client: it)
+            )
+            it
+        }
 
         when:
         List<AccountData> accountDataList = getClientAccounts.apply(clientId)
@@ -55,15 +46,7 @@ class GetClientAccountsSpec extends Specification {
         1 * clientRepository.findById(clientId) >> Optional.of(client)
         accountDataList != null
         accountDataList.size() == 2
-        accountDataList[0].id == account1.id
-        accountDataList[0].clientId == client.id
-        accountDataList[0].currency == account1.currency
-        accountDataList[0].balance == account1.balance
-        accountDataList[0].status == account1.status
-        accountDataList[1].id == account2.id
-        accountDataList[1].clientId == client.id
-        accountDataList[1].currency == account2.currency
-        accountDataList[1].balance == account2.balance
-        accountDataList[1].status == account2.status
+        accountDataList[0] == fromAccount(client.accounts[0])
+        accountDataList[1] == fromAccount(client.accounts[1])
     }
 }
