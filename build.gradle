@@ -42,6 +42,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -50,11 +51,11 @@ dependencies {
     implementation 'org.liquibase:liquibase-core'
 
     implementation 'io.projectreactor:reactor-core'
+    implementation 'com.github.ben-manes.caffeine:caffeine'
+    implementation 'io.github.openfeign:feign-jackson:11.7'
 
     implementation 'org.springdoc:springdoc-openapi-ui:1.5.13'
     implementation 'org.springdoc:springdoc-openapi-hateoas:1.5.13'
-
-    implementation 'io.github.openfeign:feign-jackson:11.7'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'

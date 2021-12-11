@@ -3,6 +3,7 @@ package com.scavlev.exchangeapi.currency;
 import feign.FeignException;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ public class CurrencyExchangeService {
 
     private final FreecurrencyapiApi freecurrencyapiApi;
 
+    @Cacheable("currencies")
     public BigDecimal getRate(String baseCurrency, String targetCurrency) {
         try {
             FreecurrencyapiLatestData freecurrencyapiLatestData = freecurrencyapiApi.getLatestRates(baseCurrency);
