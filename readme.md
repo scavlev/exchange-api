@@ -1,5 +1,7 @@
 # exchange-api
 
+[![Build Status](https://app.travis-ci.com/scavlev/exchange-api.svg?branch=main)](https://travis-ci.com/scavlev/exchange-api)
+
 ## :rocket: Run with demo data
 
 ```
