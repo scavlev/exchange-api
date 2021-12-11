@@ -82,6 +82,13 @@ tasks.register('integrationTest', Test) {
 
 check.dependsOn integrationTest
 
+if (hasProperty('buildScan')) {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        termsOfServiceAgree = 'yes'
+    }
+}
+
 wrapper {
     gradleVersion = '7.3.1'
 }
