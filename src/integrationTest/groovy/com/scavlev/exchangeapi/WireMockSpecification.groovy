@@ -19,12 +19,16 @@ class WireMockSpecification extends IntegrationSpecification {
             .extensions(new ResponseTemplateTransformer(true))
             .usingFilesUnderClasspath("src/integrationTest/resources"))
 
-    def setup() {
+    def setupSpec() {
         wireMock.start()
     }
 
-    def cleanup() {
+    def cleanupSpec() {
         wireMock.stop()
+    }
+
+    def cleanup() {
+        wireMock.resetAll()
     }
 
     static class PropertyOverrideContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {

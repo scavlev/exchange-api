@@ -13,11 +13,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 class FreecurrencyapiConfiguration {
 
-    @Value("${app.freecurrencyapi.api_key}")
-    private String apiKey;
+    private final String apiKey;
+    private final String apiUrl;
 
-    @Value("${app.freecurrencyapi.url}")
-    private String apiUrl;
+    FreecurrencyapiConfiguration(@Value("${app.freecurrencyapi.api_key}") String apiKey,
+                                 @Value("${app.freecurrencyapi.url}") String apiUrl) {
+        this.apiKey = apiKey;
+        this.apiUrl = apiUrl;
+    }
 
     @Bean
     FreecurrencyapiApi freecurrencyapiApi() {
