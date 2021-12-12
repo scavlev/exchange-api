@@ -3,6 +3,7 @@ package com.scavlev.exchangeapi.transaction.services
 
 import com.scavlev.exchangeapi.account.domain.AccountEntryType
 import com.scavlev.exchangeapi.account.domain.AccountRepository
+import com.scavlev.exchangeapi.transaction.InvalidReceivableAmount
 import com.scavlev.exchangeapi.transaction.OperationOnNonExistentAccountException
 import com.scavlev.exchangeapi.transaction.ProcessTransactionRequest
 import com.scavlev.exchangeapi.transaction.domain.Transaction

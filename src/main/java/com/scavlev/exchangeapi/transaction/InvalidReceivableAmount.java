@@ -1,4 +1,4 @@
-package com.scavlev.exchangeapi.transaction.services;
+package com.scavlev.exchangeapi.transaction;
 
 public class InvalidReceivableAmount extends RuntimeException {
 

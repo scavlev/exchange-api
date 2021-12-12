@@ -4,6 +4,7 @@ import com.scavlev.exchangeapi.account.domain.Account;
 import com.scavlev.exchangeapi.account.domain.AccountEntry;
 import com.scavlev.exchangeapi.account.domain.AccountEntryType;
 import com.scavlev.exchangeapi.account.domain.AccountRepository;
+import com.scavlev.exchangeapi.transaction.InvalidReceivableAmount;
 import com.scavlev.exchangeapi.transaction.OperationOnNonExistentAccountException;
 import com.scavlev.exchangeapi.transaction.ProcessTransactionRequest;
 import com.scavlev.exchangeapi.transaction.TransactionData;
