@@ -1,10 +1,6 @@
 package com.scavlev.exchangeapi
 
-import org.springframework.boot.test.context.SpringBootTest
-import spock.lang.Specification;
-
-@SpringBootTest
-class ApplicationSpec extends Specification {
+class ApplicationSpec extends IntegrationSpecification {
 
     def "context loads"() {
         expect: "context loads"

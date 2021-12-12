@@ -1,0 +1,3 @@
+app:
+  freecurrencyapi:
+    url: http://localhost:${wiremock.port:9090}/api/v2/
