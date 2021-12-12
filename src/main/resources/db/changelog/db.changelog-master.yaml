@@ -7,3 +7,6 @@ databaseChangeLog:
     file: db/changelog/schema.yml
 - include:
     file: db/demo-data/index.yml
+- includeAll:
+    path: db/test-data
+    errorIfMissingOrEmpty: false
