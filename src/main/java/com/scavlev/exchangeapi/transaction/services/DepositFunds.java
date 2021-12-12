@@ -14,22 +14,24 @@ import com.scavlev.exchangeapi.transaction.domain.TransactionType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
-import java.util.function.Function;
+import javax.validation.Valid;
 
 import static com.scavlev.exchangeapi.transaction.TransactionData.fromTransaction;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class DepositFunds implements Function<DepositTransactionRequest, TransactionData> {
+public class DepositFunds {
 
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public TransactionData apply(DepositTransactionRequest depositTransactionRequest) {
+    public TransactionData deposit(@Valid DepositTransactionRequest depositTransactionRequest) {
         Account toAccount = findAccount(depositTransactionRequest.getToAccount());
 
         if (toAccount.isDeactivated()) {

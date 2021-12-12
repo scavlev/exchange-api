@@ -6,19 +6,22 @@ import com.scavlev.exchangeapi.account.domain.AccountRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
-import java.util.function.Function;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class DeactivateAccount implements Function<Long, AccountData> {
+public class DeactivateAccount {
 
     private final AccountRepository accountRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public AccountData apply(Long accountId) {
+    public AccountData deactivate(@NotNull Long accountId) {
         accountRepository.deactivateAccount(accountId);
 
         return accountRepository.findById(accountId)

@@ -30,7 +30,7 @@ class ExchangeFundsSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        exchangeFunds.apply(request, rate)
+        exchangeFunds.exchange(request, rate)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -47,7 +47,7 @@ class ExchangeFundsSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        exchangeFunds.apply(request, rate)
+        exchangeFunds.exchange(request, rate)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -64,7 +64,7 @@ class ExchangeFundsSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        exchangeFunds.apply(request, rate)
+        exchangeFunds.exchange(request, rate)
 
         then:
         thrown(InvalidReceivableAmount)
@@ -83,7 +83,7 @@ class ExchangeFundsSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        exchangeFunds.apply(request, rate)
+        exchangeFunds.exchange(request, rate)
 
         then:
         1 * transactionRepository.saveAndFlush(_) >> { Transaction transaction ->

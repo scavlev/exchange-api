@@ -50,7 +50,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return list of transactions"() {
         given:
-        1 * listTransactions.apply(_ as Pageable) >> { PageRequest pageRequest ->
+        1 * listTransactions.list(_ as Pageable) >> { PageRequest pageRequest ->
             new PageImpl<TransactionData>((1..50).collect({
                 exchangeTransactionDataFixture(id: it)
             }), pageRequest, 50)
@@ -65,7 +65,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return transaction"() {
         given:
-        1 * findTransaction.apply(_) >> { Long id ->
+        1 * findTransaction.find(_) >> { Long id ->
             Optional.of(exchangeTransactionDataFixture(id: id))
         }
 
@@ -78,7 +78,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 404 if transaction is not found"() {
         given:
-        1 * findTransaction.apply(_) >> { Long id ->
+        1 * findTransaction.find(_) >> { Long id ->
             throw new TransactionNotFoundException(id)
         }
 
@@ -90,7 +90,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return a list of transaction entries"() {
         given:
-        1 * getTransactionEntries.apply(_ as Long) >> { Long id ->
+        1 * getTransactionEntries.get(_ as Long) >> { Long id ->
             (1..5).collect({
                 AccountEntryData.builder()
                         .accountId(id)
@@ -112,7 +112,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status 400 if transaction is not found while listing entries"() {
         given:
-        1 * getTransactionEntries.apply(_ as Long) >> { Long id ->
+        1 * getTransactionEntries.get(_ as Long) >> { Long id ->
             throw new TransactionEntryLoadException(id)
         }
 
@@ -124,7 +124,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should process exchange transaction"() {
         given:
-        1 * processTransaction.apply(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
+        1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             exchangeTransactionDataFixture(
                     fromAccount: processTransactionRequest.fromAccount,
                     toAccount: processTransactionRequest.toAccount,
@@ -143,7 +143,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 409 if target account receivables are less than 0.01"() {
         given:
-        1 * processTransaction.apply(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
+        1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             throw new InvalidReceivableAmount("")
         }
 
@@ -157,7 +157,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 409 if exchange currency paid is not found"() {
         given:
-        1 * processTransaction.apply(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
+        1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             throw new CurrencyPairNotFoundException("", "")
         }
 
@@ -171,7 +171,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 503 exchange service is unavailable"() {
         given:
-        1 * processTransaction.apply(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
+        1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             throw new CurrencyExchangeRatesUnavailableException("", "", null)
         }
 
@@ -185,7 +185,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should process transfer transaction"() {
         given:
-        1 * processTransaction.apply(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
+        1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             transferTransactionDataFixture(
                     fromAccount: processTransactionRequest.fromAccount,
                     toAccount: processTransactionRequest.toAccount,
@@ -203,7 +203,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if transferring between same account"() {
         given:
-        0 * processTransaction.apply(_ as ProcessTransactionRequest)
+        0 * processTransaction.process(_ as ProcessTransactionRequest)
 
         expect:
         mvc.perform(post("/transactions")
@@ -215,7 +215,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if base account has insufficient funds for transaction"() {
         given:
-        1 * processTransaction.apply(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
+        1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             throw new InsufficientFundsException(processTransactionRequest.fromAccount)
         }
 
@@ -229,7 +229,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if any account is deactivated"() {
         given:
-        1 * processTransaction.apply(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
+        1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             throw new DeactivatedAccountAccessException("")
         }
 
@@ -243,7 +243,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should process deposit transaction"() {
         given:
-        1 * depositFunds.apply(_ as DepositTransactionRequest) >> { DepositTransactionRequest depositTransactionRequest ->
+        1 * depositFunds.deposit(_ as DepositTransactionRequest) >> { DepositTransactionRequest depositTransactionRequest ->
             depositTransactionDataFixture(
                     toAccount: depositTransactionRequest.toAccount,
                     amount: depositTransactionRequest.amount)
@@ -260,7 +260,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if deposit account is deactivated"() {
         given:
-        1 * depositFunds.apply(_ as DepositTransactionRequest) >> { DepositTransactionRequest depositTransactionRequest ->
+        1 * depositFunds.deposit(_ as DepositTransactionRequest) >> { DepositTransactionRequest depositTransactionRequest ->
             throw new DeactivatedAccountAccessException("")
         }
 
@@ -274,7 +274,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if there is no account to deposit to"() {
         given:
-        1 * depositFunds.apply(_ as DepositTransactionRequest) >> { DepositTransactionRequest depositTransactionRequest ->
+        1 * depositFunds.deposit(_ as DepositTransactionRequest) >> { DepositTransactionRequest depositTransactionRequest ->
             throw new OperationOnNonExistentAccountException(depositTransactionRequest.getToAccount())
         }
 
@@ -288,7 +288,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should process withdrawal transaction"() {
         given:
-        1 * withdrawFunds.apply(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
+        1 * withdrawFunds.withdraw(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
             withdrawalTransactionDataFixture(
                     fromAccount: withdrawalTransactionRequest.fromAccount,
                     amount: withdrawalTransactionRequest.amount)
@@ -305,7 +305,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if there is insufficient funds during withdrawal"() {
         given:
-        1 * withdrawFunds.apply(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
+        1 * withdrawFunds.withdraw(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
             throw new InsufficientFundsException(withdrawalTransactionRequest.fromAccount)
         }
 
@@ -319,7 +319,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if withdrawal account is deactivated"() {
         given:
-        1 * withdrawFunds.apply(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
+        1 * withdrawFunds.withdraw(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
             throw new DeactivatedAccountAccessException("")
         }
 
@@ -333,7 +333,7 @@ class TransactionControllerSpec extends Specification {
 
     def "should return status code 400 if there is no account to withdraw from"() {
         given:
-        1 * withdrawFunds.apply(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
+        1 * withdrawFunds.withdraw(_ as WithdrawalTransactionRequest) >> { WithdrawalTransactionRequest withdrawalTransactionRequest ->
             throw new OperationOnNonExistentAccountException(withdrawalTransactionRequest.fromAccount)
         }
 

@@ -20,7 +20,7 @@ class GetClientAccountsSpec extends Specification {
         def clientId = 1
 
         when:
-        getClientAccounts.apply(clientId)
+        getClientAccounts.get(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.empty()
@@ -40,7 +40,7 @@ class GetClientAccountsSpec extends Specification {
         }
 
         when:
-        List<AccountData> accountDataList = getClientAccounts.apply(clientId)
+        List<AccountData> accountDataList = getClientAccounts.get(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.of(client)

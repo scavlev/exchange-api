@@ -19,7 +19,7 @@ class DeactivateAccountSpec extends Specification {
         Account account = createAccount(id: accountId)
 
         when:
-        def deactivatedAccountData = deactivateAccount.apply(accountId)
+        def deactivatedAccountData = deactivateAccount.deactivate(accountId)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.of(account)
@@ -32,7 +32,7 @@ class DeactivateAccountSpec extends Specification {
         def accountId = 1
 
         when:
-        deactivateAccount.apply(accountId)
+        deactivateAccount.deactivate(accountId)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.empty()

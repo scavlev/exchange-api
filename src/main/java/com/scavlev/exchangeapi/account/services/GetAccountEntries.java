@@ -9,20 +9,23 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
-import java.util.function.BiFunction;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class GetAccountEntries implements BiFunction<Long, Pageable, Page<AccountEntryData>> {
+public class GetAccountEntries {
 
     private final AccountEntryRepository accountEntryRepository;
     private final AccountRepository accountRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public Page<AccountEntryData> apply(Long accountId, Pageable pageRequest) {
+    public Page<AccountEntryData> get(@NotNull Long accountId, @NotNull Pageable pageRequest) {
         if (!accountRepository.existsById(accountId)) {
             throw new AccountEntriesRetrievalException(accountId);
         }

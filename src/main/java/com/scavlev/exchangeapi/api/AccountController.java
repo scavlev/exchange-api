@@ -46,7 +46,7 @@ class AccountController {
     @PageableAsQueryParam
     PagedModel<EntityModel<AccountData>> listAccounts(@Parameter(hidden = true) @PageableDefault(value = 20) Pageable pageRequest) {
         return just(pageRequest)
-                .map(listAccounts)
+                .map(listAccounts::list)
                 .map(page -> accountDataPagedResourcesAssembler.toModel(page, accountDataModelAssembler))
                 .block();
     }
@@ -58,7 +58,7 @@ class AccountController {
     @GetMapping("/{id}")
     EntityModel<AccountData> getAccount(@PathVariable Long id) {
         return just(id)
-                .map(findAccount)
+                .map(findAccount::find)
                 .map(optional -> optional.orElseThrow(() -> new AccountNotFoundException(id)))
                 .map(accountDataModelAssembler::toModel)
                 .block();
@@ -70,7 +70,7 @@ class AccountController {
     @PageableAsQueryParam
     @GetMapping("/{id}/entries")
     PagedModel<EntityModel<AccountEntryData>> getEntries(@PathVariable Long id, @Parameter(hidden = true) @PageableDefault(value = 20) Pageable pageRequest) {
-        return just(getAccountEntries.apply(id, pageRequest))
+        return just(getAccountEntries.get(id, pageRequest))
                 .map(page -> accountEntryDataPagedResourcesAssembler.toModel(page, accountEntryDataModelAssembler))
                 .block();
     }
@@ -82,7 +82,7 @@ class AccountController {
     @DeleteMapping("/{id}")
     EntityModel<AccountData> deactivateAccount(@PathVariable Long id) {
         return just(id)
-                .map(deactivateAccount)
+                .map(deactivateAccount::deactivate)
                 .map(accountDataModelAssembler::toModel)
                 .block();
     }
@@ -93,7 +93,7 @@ class AccountController {
                     content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @PatchMapping("/{id}")
     EntityModel<AccountData> updateAccount(@PathVariable Long id, @Valid @RequestBody UpdateAccountRequest updateAccountRequest) {
-        return just(updateAccount.apply(id, updateAccountRequest))
+        return just(updateAccount.update(id, updateAccountRequest))
                 .map(accountDataModelAssembler::toModel)
                 .block();
     }
@@ -104,7 +104,7 @@ class AccountController {
     @PostMapping
     EntityModel<AccountData> createAccount(@Valid @RequestBody OpenAccountRequest openAccountRequest) {
         return just(openAccountRequest)
-                .map(openAccount)
+                .map(openAccount::open)
                 .map(accountDataModelAssembler::toModel)
                 .block();
     }

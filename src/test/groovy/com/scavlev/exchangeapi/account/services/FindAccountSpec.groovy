@@ -17,7 +17,7 @@ class FindAccountSpec extends Specification {
         def accountId = 1
 
         when:
-        def accountData = findAccount.apply(accountId)
+        def accountData = findAccount.find(accountId)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.empty()
@@ -30,7 +30,7 @@ class FindAccountSpec extends Specification {
         Account account = createAccount(id: accountId)
 
         when:
-        def accountData = findAccount.apply(accountId)
+        def accountData = findAccount.find(accountId)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.of(account)

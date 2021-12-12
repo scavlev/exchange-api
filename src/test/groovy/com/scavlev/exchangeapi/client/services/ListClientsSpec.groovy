@@ -22,7 +22,7 @@ class ListClientsSpec extends Specification {
         }
 
         when:
-        Page<ClientData> clientData = listClients.apply(pageRequest)
+        Page<ClientData> clientData = listClients.list(pageRequest)
 
         then:
         1 * clientRepository.findAll(pageRequest) >> new PageImpl<>(clients)

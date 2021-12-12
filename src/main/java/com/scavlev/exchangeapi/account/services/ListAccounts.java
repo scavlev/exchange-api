@@ -7,17 +7,20 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
-import java.util.function.Function;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class ListAccounts implements Function<Pageable, Page<AccountData>> {
+public class ListAccounts {
 
     private final AccountRepository accountRepository;
 
-    @Override
-    public Page<AccountData> apply(Pageable pageRequest) {
+    @Valid
+    public Page<AccountData> list(@NotNull Pageable pageRequest) {
         return accountRepository.findAll(pageRequest).map(AccountData::fromAccount);
     }
 }

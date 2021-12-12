@@ -17,7 +17,7 @@ class FindClientSpec extends Specification {
         def clientId = 1
 
         when:
-        def clientData = findClient.apply(clientId)
+        def clientData = findClient.find(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.empty()
@@ -30,7 +30,7 @@ class FindClientSpec extends Specification {
         Client client = createClient(id: clientId)
 
         when:
-        def clientData = findClient.apply(clientId)
+        def clientData = findClient.find(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.of(client)

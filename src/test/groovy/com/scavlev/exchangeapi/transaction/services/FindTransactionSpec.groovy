@@ -17,7 +17,7 @@ class FindTransactionSpec extends Specification {
         def transactionId = 1
 
         when:
-        def transactionData = findTransaction.apply(transactionId)
+        def transactionData = findTransaction.find(transactionId)
 
         then:
         1 * transactionRepository.findById(transactionId) >> Optional.empty()
@@ -30,7 +30,7 @@ class FindTransactionSpec extends Specification {
         Transaction transaction = createTransaction()
 
         when:
-        def transactionData = findTransaction.apply(transactionId)
+        def transactionData = findTransaction.find(transactionId)
 
         then:
         1 * transactionRepository.findById(transactionId) >> Optional.of(transaction)

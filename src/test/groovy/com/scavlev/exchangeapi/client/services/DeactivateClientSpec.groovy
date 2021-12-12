@@ -21,7 +21,7 @@ class DeactivateClientSpec extends Specification {
         Client client = createClient(id: clientId)
 
         when:
-        deactivateClient.apply(clientId)
+        deactivateClient.deactivate(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.of(client)
@@ -34,7 +34,7 @@ class DeactivateClientSpec extends Specification {
         def clientId = 1
 
         when:
-        deactivateClient.apply(clientId)
+        deactivateClient.deactivate(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.empty()

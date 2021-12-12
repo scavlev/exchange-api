@@ -23,7 +23,7 @@ class UpdateClientSpec extends Specification {
         Client existingClient = createClient(status: ClientStatus.DEACTIVATED)
 
         when:
-        ClientData clientData = updateClient.apply(clientId, updateClientRequest)
+        ClientData clientData = updateClient.update(clientId, updateClientRequest)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.of(existingClient)
@@ -41,7 +41,7 @@ class UpdateClientSpec extends Specification {
         UpdateClientRequest updateClientRequest = new UpdateClientRequest(ClientStatus.ACTIVE)
 
         when:
-        updateClient.apply(clientId, updateClientRequest)
+        updateClient.update(clientId, updateClientRequest)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.empty()

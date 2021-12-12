@@ -22,7 +22,7 @@ class ListAccountsSpec extends Specification {
         }
 
         when:
-        Page<AccountData> accountData = listAccounts.apply(pageRequest)
+        Page<AccountData> accountData = listAccounts.list(pageRequest)
 
         then:
         1 * accountRepository.findAll(pageRequest) >> new PageImpl<>(accounts)

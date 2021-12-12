@@ -11,21 +11,23 @@ import com.scavlev.exchangeapi.client.domain.ClientRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.math.BigDecimal;
-import java.util.function.Function;
 
 import static com.scavlev.exchangeapi.account.AccountData.fromAccount;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class OpenAccount implements Function<OpenAccountRequest, AccountData> {
+public class OpenAccount {
 
     private final AccountRepository accountRepository;
     private final ClientRepository clientRepository;
 
-    @Override
-    public AccountData apply(OpenAccountRequest openAccountRequest) {
+    @Valid
+    public AccountData open(@Valid OpenAccountRequest openAccountRequest) {
         Client client = clientRepository.findById(openAccountRequest.getClientId())
                 .orElseThrow(() -> new ClientDoesntExistException(openAccountRequest.getClientId()));
 

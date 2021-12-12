@@ -22,7 +22,7 @@ class ListTransactionsSpec extends Specification {
         }
 
         when:
-        Page<TransactionData> transactionDataPage = listTransactions.apply(pageRequest)
+        Page<TransactionData> transactionDataPage = listTransactions.list(pageRequest)
 
         then:
         1 * transactionRepository.findAll(pageRequest) >> new PageImpl<>(transactions)

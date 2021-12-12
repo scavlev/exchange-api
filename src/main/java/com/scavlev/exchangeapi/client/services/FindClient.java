@@ -5,18 +5,21 @@ import com.scavlev.exchangeapi.client.domain.ClientRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.Optional;
-import java.util.function.Function;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class FindClient implements Function<Long, Optional<ClientData>> {
+public class FindClient {
 
     private final ClientRepository clientRepository;
 
-    @Override
-    public Optional<ClientData> apply(Long clientId) {
+    @Valid
+    public Optional<ClientData> find(@NotNull Long clientId) {
         return clientRepository.findById(clientId).map(ClientData::fromClient);
     }
 }

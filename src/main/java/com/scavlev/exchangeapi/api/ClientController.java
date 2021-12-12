@@ -49,7 +49,7 @@ class ClientController {
     @PageableAsQueryParam
     PagedModel<EntityModel<ClientData>> listClients(@Parameter(hidden = true) @PageableDefault(value = 20) Pageable pageRequest) {
         return just(pageRequest)
-                .map(listClients)
+                .map(listClients::list)
                 .map(page -> clientDataPagedResourcesAssembler.toModel(page, clientDataModelAssembler))
                 .block();
     }
@@ -61,7 +61,7 @@ class ClientController {
     @GetMapping("/{id}")
     EntityModel<ClientData> getClient(@PathVariable Long id) {
         return just(id)
-                .map(findClient)
+                .map(findClient::find)
                 .map(optional -> optional.orElseThrow(() -> new ClientNotFoundException(id)))
                 .map(clientDataModelAssembler::toModel)
                 .block();
@@ -73,7 +73,7 @@ class ClientController {
     @GetMapping("/{id}/accounts")
     CollectionModel<EntityModel<AccountData>> getClientAccounts(@PathVariable Long id) {
         return just(id)
-                .map(getClientAccounts)
+                .map(getClientAccounts::get)
                 .map(accountDataModelAssembler::toCollectionModel)
                 .block();
     }
@@ -85,7 +85,7 @@ class ClientController {
     @DeleteMapping("/{id}")
     EntityModel<ClientData> deactivateClient(@PathVariable Long id) {
         return just(id)
-                .map(deactivateClient)
+                .map(deactivateClient::deactivate)
                 .map(clientDataModelAssembler::toModel)
                 .block();
     }
@@ -96,7 +96,7 @@ class ClientController {
                     content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @PatchMapping("/{id}")
     EntityModel<ClientData> updateClient(@PathVariable Long id, @Valid @RequestBody UpdateClientRequest updateClientRequest) {
-        return just(updateClient.apply(id, updateClientRequest))
+        return just(updateClient.update(id, updateClientRequest))
                 .map(clientDataModelAssembler::toModel)
                 .block();
     }
@@ -104,7 +104,7 @@ class ClientController {
     @Operation(summary = "Register new client")
     @PostMapping
     EntityModel<ClientData> registerClient() {
-        return clientDataModelAssembler.toModel(registerClient.call());
+        return clientDataModelAssembler.toModel(registerClient.register());
     }
 
 }

@@ -49,7 +49,7 @@ class AccountControllerSpec extends Specification {
 
     def "should return list of accounts"() {
         given:
-        1 * listAccounts.apply(_ as Pageable) >> { PageRequest pageRequest ->
+        1 * listAccounts.list(_ as Pageable) >> { PageRequest pageRequest ->
             new PageImpl<AccountData>((1..50).collect({
                 accountDataFixture(id: it)
             }), pageRequest, 50)
@@ -64,7 +64,7 @@ class AccountControllerSpec extends Specification {
 
     def "should return an account"() {
         given:
-        1 * findAccount.apply(_) >> { Long id ->
+        1 * findAccount.find(_) >> { Long id ->
             Optional.of(accountDataFixture(id: id))
         }
 
@@ -78,7 +78,7 @@ class AccountControllerSpec extends Specification {
     def "should return status 404 if account is not found"() {
         given:
         def accountId = 1
-        1 * findAccount.apply(accountId) >> Optional.empty()
+        1 * findAccount.find(accountId) >> Optional.empty()
 
         expect:
         mvc.perform(get("/accounts/$accountId"))
@@ -88,7 +88,7 @@ class AccountControllerSpec extends Specification {
 
     def "should return a list of account entries"() {
         given:
-        1 * getAccountEntries.apply(_ as Long, _ as Pageable) >> { Long id, PageRequest pageRequest ->
+        1 * getAccountEntries.get(_ as Long, _ as Pageable) >> { Long id, PageRequest pageRequest ->
             new PageImpl<AccountEntryData>((1..50).collect({
                 AccountEntryData.builder()
                         .accountId(id)
@@ -110,7 +110,7 @@ class AccountControllerSpec extends Specification {
 
     def "should return status 400 if account is not found while listing entries"() {
         given:
-        1 * getAccountEntries.apply(_ as Long, _ as Pageable) >> { Long id, PageRequest pageRequest ->
+        1 * getAccountEntries.get(_ as Long, _ as Pageable) >> { Long id, PageRequest pageRequest ->
             throw new AccountEntriesRetrievalException(id)
         }
 
@@ -122,7 +122,7 @@ class AccountControllerSpec extends Specification {
 
     def "should deactivate account"() {
         given:
-        1 * deactivateAccount.apply(_ as Long) >> { Long id ->
+        1 * deactivateAccount.deactivate(_ as Long) >> { Long id ->
             accountDataFixture(id: id)
         }
 
@@ -135,7 +135,7 @@ class AccountControllerSpec extends Specification {
 
     def "should return status 404 if deactivating account does not exist"() {
         given:
-        1 * deactivateAccount.apply(_ as Long) >> { Long id ->
+        1 * deactivateAccount.deactivate(_ as Long) >> { Long id ->
             throw new AccountNotFoundException(id)
         }
 
@@ -147,7 +147,7 @@ class AccountControllerSpec extends Specification {
 
     def "should update account"() {
         given:
-        1 * updateAccount.apply(_ as Long, _ as UpdateAccountRequest) >> { Long id, UpdateAccountRequest updateAccountRequest ->
+        1 * updateAccount.update(_ as Long, _ as UpdateAccountRequest) >> { Long id, UpdateAccountRequest updateAccountRequest ->
             accountDataFixture(id: id)
         }
 
@@ -162,7 +162,7 @@ class AccountControllerSpec extends Specification {
 
     def "should return status code 404 if there is no account to update"() {
         given:
-        1 * updateAccount.apply(_ as Long, _ as UpdateAccountRequest) >> { Long id, UpdateAccountRequest updateAccountRequest ->
+        1 * updateAccount.update(_ as Long, _ as UpdateAccountRequest) >> { Long id, UpdateAccountRequest updateAccountRequest ->
             throw new AccountNotFoundException(id)
         }
 
@@ -177,7 +177,7 @@ class AccountControllerSpec extends Specification {
     def "should create new account"() {
         given:
         1 * supportedCurrencies.getCurrencies() >> ["BTC", "EUR", "USD"]
-        1 * openAccount.apply(_ as OpenAccountRequest) >> { OpenAccountRequest openAccountRequest ->
+        1 * openAccount.open(_ as OpenAccountRequest) >> { OpenAccountRequest openAccountRequest ->
             accountDataFixture(
                     clientId: openAccountRequest.clientId,
                     currency: openAccountRequest.currency
@@ -196,7 +196,7 @@ class AccountControllerSpec extends Specification {
     def "should return status code 400 if client not found while creating account"() {
         given:
         1 * supportedCurrencies.getCurrencies() >> ["BTC", "EUR", "USD"]
-        1 * openAccount.apply(_ as OpenAccountRequest) >> { OpenAccountRequest openAccountRequest ->
+        1 * openAccount.open(_ as OpenAccountRequest) >> { OpenAccountRequest openAccountRequest ->
             throw new ClientDoesntExistException(openAccountRequest.getClientId())
         }
 
@@ -211,7 +211,7 @@ class AccountControllerSpec extends Specification {
     def "should return status code 400 if currency is not supported"() {
         given:
         1 * supportedCurrencies.getCurrencies() >> ["EUR", "USD"]
-        0 * openAccount.apply(_ as OpenAccountRequest)
+        0 * openAccount.open(_ as OpenAccountRequest)
 
         expect:
         mvc.perform(post("/accounts")

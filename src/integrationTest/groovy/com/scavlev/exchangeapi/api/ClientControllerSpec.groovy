@@ -47,7 +47,7 @@ class ClientControllerSpec extends Specification {
 
     def "should return list of clients"() {
         given:
-        1 * listClients.apply(_ as Pageable) >> { PageRequest pageRequest ->
+        1 * listClients.list(_ as Pageable) >> { PageRequest pageRequest ->
             new PageImpl<ClientData>((1..50).collect({
                 clientDataFixture(id: it)
             }), pageRequest, 50)
@@ -62,7 +62,7 @@ class ClientControllerSpec extends Specification {
 
     def "should return a client"() {
         given:
-        1 * findClient.apply(_) >> { Long id ->
+        1 * findClient.find(_) >> { Long id ->
             Optional.of(clientDataFixture(id: id))
         }
 
@@ -75,7 +75,7 @@ class ClientControllerSpec extends Specification {
 
     def "should return status code 404 if client is not found"() {
         given:
-        1 * findClient.apply(_) >> { Long id ->
+        1 * findClient.find(_) >> { Long id ->
             throw new ClientNotFoundException(id)
         }
 
@@ -87,7 +87,7 @@ class ClientControllerSpec extends Specification {
 
     def "should return a list of client accounts"() {
         given:
-        1 * getClientAccounts.apply(_ as Long) >> { Long id ->
+        1 * getClientAccounts.get(_ as Long) >> { Long id ->
             (1..50).collect({
                 AccountData.builder()
                         .id(it)
@@ -108,7 +108,7 @@ class ClientControllerSpec extends Specification {
 
     def "should return status 400 if client is not found while listing accounts"() {
         given:
-        1 * getClientAccounts.apply(_ as Long) >> { Long id ->
+        1 * getClientAccounts.get(_ as Long) >> { Long id ->
             throw new ClientDoesntExistException(id)
         }
 
@@ -120,7 +120,7 @@ class ClientControllerSpec extends Specification {
 
     def "should deactivate client"() {
         given:
-        1 * deactivateClient.apply(_ as Long) >> { Long id ->
+        1 * deactivateClient.deactivate(_ as Long) >> { Long id ->
             clientDataFixture(id: id)
         }
 
@@ -133,7 +133,7 @@ class ClientControllerSpec extends Specification {
 
     def "should return status 404 if deactivating client does not exist"() {
         given:
-        1 * deactivateClient.apply(_ as Long) >> { Long id ->
+        1 * deactivateClient.deactivate(_ as Long) >> { Long id ->
             throw new ClientNotFoundException(id)
         }
 
@@ -145,7 +145,7 @@ class ClientControllerSpec extends Specification {
 
     def "should update client"() {
         given:
-        1 * updateClient.apply(_ as Long, _ as UpdateClientRequest) >> { Long id, UpdateClientRequest updateClientRequest ->
+        1 * updateClient.update(_ as Long, _ as UpdateClientRequest) >> { Long id, UpdateClientRequest updateClientRequest ->
             clientDataFixture(id: id, status: updateClientRequest.status)
         }
 
@@ -160,7 +160,7 @@ class ClientControllerSpec extends Specification {
 
     def "should return status code 404 if there is no client to update"() {
         given:
-        1 * updateClient.apply(_ as Long, _ as UpdateClientRequest) >> { Long id, UpdateClientRequest updateClientRequest ->
+        1 * updateClient.update(_ as Long, _ as UpdateClientRequest) >> { Long id, UpdateClientRequest updateClientRequest ->
             throw new ClientNotFoundException(id)
         }
 
@@ -174,7 +174,7 @@ class ClientControllerSpec extends Specification {
 
     def "should create new client"() {
         given:
-        1 * registerClient.call() >> {
+        1 * registerClient.register() >> {
             clientDataFixture()
         }
 

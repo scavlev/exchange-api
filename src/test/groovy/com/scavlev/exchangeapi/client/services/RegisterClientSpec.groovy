@@ -14,7 +14,7 @@ class RegisterClientSpec extends Specification {
 
     def "should create and store new client"() {
         when:
-        ClientData clientData = registerClient.call()
+        ClientData clientData = registerClient.register()
 
         then:
         1 * clientRepository.saveAndFlush(_) >> { Client client ->

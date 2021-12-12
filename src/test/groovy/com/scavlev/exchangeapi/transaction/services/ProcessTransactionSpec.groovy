@@ -34,7 +34,7 @@ class ProcessTransactionSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        processTransaction.apply(request)
+        processTransaction.process(request)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -50,7 +50,7 @@ class ProcessTransactionSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        processTransaction.apply(request)
+        processTransaction.process(request)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -66,7 +66,7 @@ class ProcessTransactionSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        processTransaction.apply(request)
+        processTransaction.process(request)
 
         then:
         thrown(DeactivatedAccountAccessException)
@@ -82,7 +82,7 @@ class ProcessTransactionSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        processTransaction.apply(request)
+        processTransaction.process(request)
 
         then:
         thrown(DeactivatedAccountAccessException)
@@ -98,7 +98,7 @@ class ProcessTransactionSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        processTransaction.apply(request)
+        processTransaction.process(request)
 
         then:
         thrown(InsufficientFundsException)
@@ -114,11 +114,11 @@ class ProcessTransactionSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        processTransaction.apply(request)
+        processTransaction.process(request)
 
         then:
-        1 * transferFunds.apply(request)
-        0 * exchangeFunds.apply(request, _)
+        1 * transferFunds.transfer(request)
+        0 * exchangeFunds.exchange(request, _)
     }
 
     def "should execute exchange if account currencies are different"() {
@@ -134,11 +134,11 @@ class ProcessTransactionSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        processTransaction.apply(request)
+        processTransaction.process(request)
 
         then:
         1 * currencyExchangeService.getRate(fromAccount.currency, toAccount.currency) >> rate
-        1 * exchangeFunds.apply(request, rate)
-        0 * transferFunds.apply(request)
+        1 * exchangeFunds.exchange(request, rate)
+        0 * transferFunds.transfer(request)
     }
 }

@@ -12,21 +12,23 @@ import com.scavlev.exchangeapi.transaction.domain.TransactionType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import java.math.BigDecimal;
-import java.util.function.Function;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class ProcessTransaction implements Function<ProcessTransactionRequest, TransactionData> {
+public class ProcessTransaction {
 
     private final AccountRepository accountRepository;
     private final CurrencyExchangeService currencyExchangeService;
     private final ExchangeFunds exchangeFunds;
     private final TransferFunds transferFunds;
 
-    @Override
-    public TransactionData apply(ProcessTransactionRequest processTransactionRequest) {
+    @Valid
+    public TransactionData process(@Valid ProcessTransactionRequest processTransactionRequest) {
         Account fromAccount = findAccount(processTransactionRequest.getFromAccount());
         Account toAccount = findAccount(processTransactionRequest.getToAccount());
 
@@ -38,10 +40,10 @@ public class ProcessTransaction implements Function<ProcessTransactionRequest, T
                 : TransactionType.EXCHANGE;
 
         if (transactionType == TransactionType.TRANSFER) {
-            return transferFunds.apply(processTransactionRequest);
+            return transferFunds.transfer(processTransactionRequest);
         } else {
             BigDecimal rate = currencyExchangeService.getRate(fromAccount.getCurrency(), toAccount.getCurrency());
-            return exchangeFunds.apply(processTransactionRequest, rate);
+            return exchangeFunds.exchange(processTransactionRequest, rate);
         }
     }
 

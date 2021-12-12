@@ -8,19 +8,22 @@ import com.scavlev.exchangeapi.client.domain.ClientRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
-import java.util.function.BiFunction;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class UpdateClient implements BiFunction<Long, UpdateClientRequest, ClientData> {
+public class UpdateClient {
 
     private final ClientRepository clientRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public ClientData apply(Long clientId, UpdateClientRequest updateClientRequest) {
+    public ClientData update(@NotNull Long clientId, @Valid UpdateClientRequest updateClientRequest) {
         return clientRepository.findById(clientId)
                 .map(client -> updateClient(updateClientRequest, client))
                 .map(clientRepository::saveAndFlush)

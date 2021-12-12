@@ -6,21 +6,24 @@ import com.scavlev.exchangeapi.client.domain.ClientRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class GetClientAccounts implements Function<Long, List<AccountData>> {
+public class GetClientAccounts {
 
     private final ClientRepository clientRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public List<AccountData> apply(Long clientId) {
+    public List<AccountData> get(@NotNull Long clientId) {
         return clientRepository.findById(clientId)
                 .orElseThrow(() -> new ClientDoesntExistException(clientId))
                 .getAccounts()

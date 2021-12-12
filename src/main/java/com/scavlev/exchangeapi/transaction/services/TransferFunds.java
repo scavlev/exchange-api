@@ -13,23 +13,25 @@ import com.scavlev.exchangeapi.transaction.domain.TransactionType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.math.BigDecimal;
-import java.util.function.Function;
 
 import static com.scavlev.exchangeapi.transaction.TransactionData.fromTransaction;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-class TransferFunds implements Function<ProcessTransactionRequest, TransactionData> {
+class TransferFunds {
 
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public TransactionData apply(ProcessTransactionRequest processTransactionRequest) {
+    public TransactionData transfer(@Valid ProcessTransactionRequest processTransactionRequest) {
         Account fromAccount = findAccount(processTransactionRequest.getFromAccount());
         Account toAccount = findAccount(processTransactionRequest.getToAccount());
 

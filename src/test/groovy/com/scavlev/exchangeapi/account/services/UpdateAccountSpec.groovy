@@ -22,7 +22,7 @@ class UpdateAccountSpec extends Specification {
         Account existingAccount = createAccount(id: accountId, status: AccountStatus.DEACTIVATED)
 
         when:
-        AccountData accountData = updateAccount.apply(accountId, updateAccountRequest)
+        AccountData accountData = updateAccount.update(accountId, updateAccountRequest)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.of(existingAccount)
@@ -40,7 +40,7 @@ class UpdateAccountSpec extends Specification {
         UpdateAccountRequest updateAccountRequest = new UpdateAccountRequest(AccountStatus.ACTIVE)
 
         when:
-        updateAccount.apply(accountId, updateAccountRequest)
+        updateAccount.update(accountId, updateAccountRequest)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.empty()

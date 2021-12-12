@@ -7,17 +7,20 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
-import java.util.function.Function;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class ListTransactions implements Function<Pageable, Page<TransactionData>> {
+public class ListTransactions {
 
     private final TransactionRepository transactionRepository;
 
-    @Override
-    public Page<TransactionData> apply(Pageable pageRequest) {
+    @Valid
+    public Page<TransactionData> list(@NotNull Pageable pageRequest) {
         return transactionRepository.findAll(pageRequest).map(TransactionData::fromTransaction);
     }
 

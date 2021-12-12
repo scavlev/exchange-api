@@ -28,7 +28,7 @@ class TransferFundsSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        transferFunds.apply(request)
+        transferFunds.transfer(request)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -44,7 +44,7 @@ class TransferFundsSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        transferFunds.apply(request)
+        transferFunds.transfer(request)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -62,7 +62,7 @@ class TransferFundsSpec extends Specification {
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
 
         when:
-        transferFunds.apply(request)
+        transferFunds.transfer(request)
 
         then:
         1 * transactionRepository.saveAndFlush(_) >> { Transaction transaction ->

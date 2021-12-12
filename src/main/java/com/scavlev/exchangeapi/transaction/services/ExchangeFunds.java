@@ -15,24 +15,27 @@ import com.scavlev.exchangeapi.transaction.domain.TransactionType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.function.BiFunction;
 
 import static com.scavlev.exchangeapi.transaction.TransactionData.fromTransaction;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-class ExchangeFunds implements BiFunction<ProcessTransactionRequest, BigDecimal, TransactionData> {
+class ExchangeFunds {
 
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public TransactionData apply(ProcessTransactionRequest processTransactionRequest, BigDecimal rate) {
+    public TransactionData exchange(@Valid ProcessTransactionRequest processTransactionRequest, @NotNull BigDecimal rate) {
         Account fromAccount = findAccount(processTransactionRequest.getFromAccount());
         Account toAccount = findAccount(processTransactionRequest.getToAccount());
 

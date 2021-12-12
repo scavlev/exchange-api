@@ -15,23 +15,25 @@ import com.scavlev.exchangeapi.transaction.domain.TransactionType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.math.BigDecimal;
-import java.util.function.Function;
 
 import static com.scavlev.exchangeapi.transaction.TransactionData.fromTransaction;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class WithdrawFunds implements Function<WithdrawalTransactionRequest, TransactionData> {
+public class WithdrawFunds {
 
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public TransactionData apply(WithdrawalTransactionRequest withdrawalTransactionRequest) {
+    public TransactionData withdraw(@Valid WithdrawalTransactionRequest withdrawalTransactionRequest) {
         Account fromAccount = findAccount(withdrawalTransactionRequest.getFromAccount());
 
         validateFromAccount(fromAccount, withdrawalTransactionRequest.getAmount());

@@ -25,7 +25,7 @@ class OpenAccountSpec extends Specification {
         Client client = createClient()
 
         when:
-        AccountData accountData = openAccount.apply(request)
+        AccountData accountData = openAccount.open(request)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.of(client)
@@ -51,7 +51,7 @@ class OpenAccountSpec extends Specification {
         OpenAccountRequest request = new OpenAccountRequest(clientId, "EUR")
 
         when:
-        openAccount.apply(request)
+        openAccount.open(request)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.empty()

@@ -8,19 +8,22 @@ import com.scavlev.exchangeapi.account.domain.AccountRepository;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.transaction.Transactional;
-import java.util.function.BiFunction;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Service
+@Validated
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
-public class UpdateAccount implements BiFunction<Long, UpdateAccountRequest, AccountData> {
+public class UpdateAccount {
 
     private final AccountRepository accountRepository;
 
-    @Override
+    @Valid
     @Transactional
-    public AccountData apply(Long accountId, UpdateAccountRequest updateAccountRequest) {
+    public AccountData update(@NotNull Long accountId, @Valid UpdateAccountRequest updateAccountRequest) {
         return accountRepository.findById(accountId)
                 .map(account -> updateAccount(updateAccountRequest, account))
                 .map(accountRepository::saveAndFlush)

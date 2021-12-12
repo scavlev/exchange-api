@@ -28,7 +28,7 @@ class WithdrawFundsSpec extends Specification {
         WithdrawalTransactionRequest request = new WithdrawalTransactionRequest(accountId, amount)
 
         when:
-        withdrawFunds.apply(request)
+        withdrawFunds.withdraw(request)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -42,7 +42,7 @@ class WithdrawFundsSpec extends Specification {
         WithdrawalTransactionRequest request = new WithdrawalTransactionRequest(accountId, amount)
 
         when:
-        withdrawFunds.apply(request)
+        withdrawFunds.withdraw(request)
 
         then:
         thrown(DeactivatedAccountAccessException)
@@ -56,7 +56,7 @@ class WithdrawFundsSpec extends Specification {
         WithdrawalTransactionRequest request = new WithdrawalTransactionRequest(accountId, amount)
 
         when:
-        withdrawFunds.apply(request)
+        withdrawFunds.withdraw(request)
 
         then:
         thrown(InsufficientFundsException)
@@ -71,7 +71,7 @@ class WithdrawFundsSpec extends Specification {
         WithdrawalTransactionRequest request = new WithdrawalTransactionRequest(accountId, amount)
 
         when:
-        withdrawFunds.apply(request)
+        withdrawFunds.withdraw(request)
 
         then:
         1 * transactionRepository.saveAndFlush(_) >> { Transaction transaction ->

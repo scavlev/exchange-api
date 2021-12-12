@@ -27,7 +27,7 @@ class DepositFundsSpec extends Specification {
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 
         when:
-        depositFunds.apply(request)
+        depositFunds.deposit(request)
 
         then:
         thrown(OperationOnNonExistentAccountException)
@@ -41,7 +41,7 @@ class DepositFundsSpec extends Specification {
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 
         when:
-        depositFunds.apply(request)
+        depositFunds.deposit(request)
 
         then:
         thrown(DeactivatedAccountAccessException)
@@ -56,7 +56,7 @@ class DepositFundsSpec extends Specification {
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 
         when:
-        depositFunds.apply(request)
+        depositFunds.deposit(request)
 
         then:
         1 * transactionRepository.saveAndFlush(_) >> { Transaction transaction ->

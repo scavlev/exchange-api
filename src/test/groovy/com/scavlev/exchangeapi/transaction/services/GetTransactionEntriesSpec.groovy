@@ -22,7 +22,7 @@ class GetTransactionEntriesSpec extends Specification {
         def transactionId = 1
 
         when:
-        getTransactionEntries.apply(transactionId)
+        getTransactionEntries.get(transactionId)
 
         then:
         1 * transactionRepository.findById(transactionId) >> Optional.empty()
@@ -42,7 +42,7 @@ class GetTransactionEntriesSpec extends Specification {
         }
 
         when:
-        List<AccountEntryData> accountEntryDataList = getTransactionEntries.apply(transactionId)
+        List<AccountEntryData> accountEntryDataList = getTransactionEntries.get(transactionId)
 
         then:
         1 * transactionRepository.findById(transactionId) >> Optional.of(transaction)

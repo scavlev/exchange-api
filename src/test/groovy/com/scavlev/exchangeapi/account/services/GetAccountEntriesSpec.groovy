@@ -26,7 +26,7 @@ class GetAccountEntriesSpec extends Specification {
         def pageRequest = PageRequest.of(0, 10)
 
         when:
-        getAccountEntries.apply(accountId, pageRequest)
+        getAccountEntries.get(accountId, pageRequest)
 
         then:
         1 * accountRepository.existsById(accountId) >> false
@@ -47,7 +47,7 @@ class GetAccountEntriesSpec extends Specification {
         }
 
         when:
-        Page<AccountEntryData> accountEntryDataList = getAccountEntries.apply(accountId, pageRequest)
+        Page<AccountEntryData> accountEntryDataList = getAccountEntries.get(accountId, pageRequest)
 
         then:
         1 * accountRepository.existsById(accountId) >> true

@@ -46,7 +46,7 @@ class TransactionController {
     @PageableAsQueryParam
     PagedModel<EntityModel<TransactionData>> listTransactions(@Parameter(hidden = true) @PageableDefault(value = 20) Pageable pageRequest) {
         return just(pageRequest)
-                .map(listTransactions)
+                .map(listTransactions::list)
                 .map(page -> transactionDataPagedResourcesAssembler.toModel(page, transactionDataModelAssembler))
                 .block();
     }
@@ -57,7 +57,7 @@ class TransactionController {
     @GetMapping("/{id}")
     EntityModel<TransactionData> getTransaction(@PathVariable Long id) {
         return just(id)
-                .map(findTransaction)
+                .map(findTransaction::find)
                 .map(optional -> optional.orElseThrow(() -> new TransactionNotFoundException(id)))
                 .map(transactionDataModelAssembler::toModel)
                 .block();
@@ -68,7 +68,7 @@ class TransactionController {
             @ApiResponse(responseCode = "400", content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @GetMapping("/{id}/entries")
     CollectionModel<EntityModel<AccountEntryData>> getTransactionEntries(@PathVariable Long id) {
-        return just(getTransactionEntries.apply(id))
+        return just(getTransactionEntries.get(id))
                 .map(accountEntryDataModelAssembler::toCollectionModel)
                 .block();
     }
@@ -79,7 +79,7 @@ class TransactionController {
     @PostMapping
     EntityModel<TransactionData> processTransaction(@Valid @RequestBody ProcessTransactionRequest processTransactionRequest) {
         return just(processTransactionRequest)
-                .map(processTransaction)
+                .map(processTransaction::process)
                 .map(transactionDataModelAssembler::toModel)
                 .block();
     }
@@ -90,7 +90,7 @@ class TransactionController {
     @PostMapping("/deposit")
     EntityModel<TransactionData> depositFunds(@Valid @RequestBody DepositTransactionRequest depositTransactionRequest) {
         return just(depositTransactionRequest)
-                .map(depositFunds)
+                .map(depositFunds::deposit)
                 .map(transactionDataModelAssembler::toModel)
                 .block();
     }
@@ -101,7 +101,7 @@ class TransactionController {
     @PostMapping("/withdrawal")
     EntityModel<TransactionData> withdrawFunds(@Valid @RequestBody WithdrawalTransactionRequest withdrawalTransactionRequest) {
         return just(withdrawalTransactionRequest)
-                .map(withdrawFunds)
+                .map(withdrawFunds::withdraw)
                 .map(transactionDataModelAssembler::toModel)
                 .block();
     }
