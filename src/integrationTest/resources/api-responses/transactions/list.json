@@ -3,7 +3,7 @@
     "transactionDataList": [
       {
         "id": 1,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 0.7,
@@ -37,7 +37,7 @@
       },
       {
         "id": 2,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 1.4,
@@ -71,7 +71,7 @@
       },
       {
         "id": 3,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 2.1,
@@ -105,7 +105,7 @@
       },
       {
         "id": 4,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 2.8,
@@ -139,7 +139,7 @@
       },
       {
         "id": 5,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 3.5,
@@ -173,7 +173,7 @@
       },
       {
         "id": 6,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 4.2,
@@ -207,7 +207,7 @@
       },
       {
         "id": 7,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 4.9,
@@ -241,7 +241,7 @@
       },
       {
         "id": 8,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 5.6,
@@ -275,7 +275,7 @@
       },
       {
         "id": 9,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 6.3,
@@ -309,7 +309,7 @@
       },
       {
         "id": 10,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 7.0,
@@ -343,7 +343,7 @@
       },
       {
         "id": 11,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 7.7,
@@ -377,7 +377,7 @@
       },
       {
         "id": 12,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 8.4,
@@ -411,7 +411,7 @@
       },
       {
         "id": 13,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 9.1,
@@ -445,7 +445,7 @@
       },
       {
         "id": 14,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 9.8,
@@ -479,7 +479,7 @@
       },
       {
         "id": 15,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 10.5,
@@ -513,7 +513,7 @@
       },
       {
         "id": 16,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 11.2,
@@ -547,7 +547,7 @@
       },
       {
         "id": 17,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 11.9,
@@ -581,7 +581,7 @@
       },
       {
         "id": 18,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 12.6,
@@ -615,7 +615,7 @@
       },
       {
         "id": 19,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 13.3,
@@ -649,7 +649,7 @@
       },
       {
         "id": 20,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 14.0,
@@ -683,7 +683,7 @@
       },
       {
         "id": 21,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 14.7,
@@ -717,7 +717,7 @@
       },
       {
         "id": 22,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 15.4,
@@ -751,7 +751,7 @@
       },
       {
         "id": 23,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 16.1,
@@ -785,7 +785,7 @@
       },
       {
         "id": 24,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 16.8,
@@ -819,7 +819,7 @@
       },
       {
         "id": 25,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 17.5,
@@ -853,7 +853,7 @@
       },
       {
         "id": 26,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 18.2,
@@ -887,7 +887,7 @@
       },
       {
         "id": 27,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 18.9,
@@ -921,7 +921,7 @@
       },
       {
         "id": 28,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 19.6,
@@ -955,7 +955,7 @@
       },
       {
         "id": 29,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 20.3,
@@ -989,7 +989,7 @@
       },
       {
         "id": 30,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 21.0,
@@ -1023,7 +1023,7 @@
       },
       {
         "id": 31,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 21.7,
@@ -1057,7 +1057,7 @@
       },
       {
         "id": 32,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 22.4,
@@ -1091,7 +1091,7 @@
       },
       {
         "id": 33,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 23.1,
@@ -1125,7 +1125,7 @@
       },
       {
         "id": 34,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 23.8,
@@ -1159,7 +1159,7 @@
       },
       {
         "id": 35,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 24.5,
@@ -1193,7 +1193,7 @@
       },
       {
         "id": 36,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 25.2,
@@ -1227,7 +1227,7 @@
       },
       {
         "id": 37,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 25.9,
@@ -1261,7 +1261,7 @@
       },
       {
         "id": 38,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 26.6,
@@ -1295,7 +1295,7 @@
       },
       {
         "id": 39,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 27.3,
@@ -1329,7 +1329,7 @@
       },
       {
         "id": 40,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 28.0,
@@ -1363,7 +1363,7 @@
       },
       {
         "id": 41,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 28.7,
@@ -1397,7 +1397,7 @@
       },
       {
         "id": 42,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 29.4,
@@ -1431,7 +1431,7 @@
       },
       {
         "id": 43,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 30.1,
@@ -1465,7 +1465,7 @@
       },
       {
         "id": 44,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 30.8,
@@ -1499,7 +1499,7 @@
       },
       {
         "id": 45,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 31.5,
@@ -1533,7 +1533,7 @@
       },
       {
         "id": 46,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 32.2,
@@ -1567,7 +1567,7 @@
       },
       {
         "id": 47,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 32.9,
@@ -1601,7 +1601,7 @@
       },
       {
         "id": 48,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 33.6,
@@ -1635,7 +1635,7 @@
       },
       {
         "id": 49,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 34.3,
@@ -1669,7 +1669,7 @@
       },
       {
         "id": 50,
-        "timestamp": "2021-12-10T20:17:22.476322",
+        "timestamp": "2021-12-10T20:17:22.476322Z",
         "type": "EXCHANGE",
         "exchangeRate": {
           "rate": 35.0,

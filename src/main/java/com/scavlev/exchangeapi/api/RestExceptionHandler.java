@@ -21,7 +21,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.stream.Collectors;
 
 import static java.lang.String.format;
@@ -105,7 +105,7 @@ class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     private ApiError apiError(String error, HttpStatus status, String uri) {
         return ApiError.builder()
-                .timestamp(LocalDateTime.now())
+                .timestamp(ZonedDateTime.now())
                 .status(status.value())
                 .error(error)
                 .path(uri)

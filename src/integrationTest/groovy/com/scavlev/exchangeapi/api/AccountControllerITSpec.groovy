@@ -17,7 +17,7 @@ import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
-import java.time.LocalDateTime
+import java.time.ZonedDateTime
 
 import static com.scavlev.exchangeapi.api.FixtureHelper.accountDataFixture
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
@@ -94,7 +94,7 @@ class AccountControllerITSpec extends Specification {
                         .accountId(id)
                         .transactionId(it * 16)
                         .currency("EUR")
-                        .timestamp(LocalDateTime.parse('2021-12-10T20:17:22.476322'))
+                        .timestamp(ZonedDateTime.parse('2021-12-10T20:17:22.476322+00'))
                         .type(AccountEntryType.DEBIT)
                         .amount(it * 77.3)
                         .build()

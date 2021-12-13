@@ -7,7 +7,7 @@ import com.scavlev.exchangeapi.client.domain.ClientStatus
 import com.scavlev.exchangeapi.transaction.TransactionData
 import com.scavlev.exchangeapi.transaction.domain.TransactionType
 
-import java.time.LocalDateTime
+import java.time.ZonedDateTime
 
 class FixtureHelper {
 
@@ -43,7 +43,7 @@ class FixtureHelper {
                              rate       : (params.rate ?: (params.id ?: 1) * 0.7)] << params
         TransactionData.builder()
                 .id(defaultParams.id as Long)
-                .timestamp(LocalDateTime.parse('2021-12-10T20:17:22.476322'))
+                .timestamp(ZonedDateTime.parse('2021-12-10T20:17:22.476322+00'))
                 .type(TransactionType.EXCHANGE)
                 .exchangeRate(TransactionData.Rate.builder()
                         .rate(defaultParams.rate as BigDecimal)
@@ -70,7 +70,7 @@ class FixtureHelper {
                              amount     : (params.amount ?: (params.id ?: 1) * 15)] << params
         TransactionData.builder()
                 .id(defaultParams.id as Long)
-                .timestamp(LocalDateTime.parse('2021-12-10T20:17:22.476322'))
+                .timestamp(ZonedDateTime.parse('2021-12-10T20:17:22.476322+00'))
                 .type(TransactionType.TRANSFER)
                 .toAccount(TransactionData.ToAccount.builder()
                         .id(defaultParams.toAccount as Long)
@@ -91,7 +91,7 @@ class FixtureHelper {
                              amount   : (params.amount ?: (params.id ?: 1) * 15)] << params
         TransactionData.builder()
                 .id(defaultParams.id as Long)
-                .timestamp(LocalDateTime.parse('2021-12-10T20:17:22.476322'))
+                .timestamp(ZonedDateTime.parse('2021-12-10T20:17:22.476322+00'))
                 .type(TransactionType.DEPOSIT)
                 .toAccount(TransactionData.ToAccount.builder()
                         .id(defaultParams.toAccount as Long)
@@ -107,7 +107,7 @@ class FixtureHelper {
                              amount     : (params.amount ?: (params.id ?: 1) * 15)] << params
         TransactionData.builder()
                 .id(defaultParams.id as Long)
-                .timestamp(LocalDateTime.parse('2021-12-10T20:17:22.476322'))
+                .timestamp(ZonedDateTime.parse('2021-12-10T20:17:22.476322+00'))
                 .type(TransactionType.WITHDRAWAL)
                 .fromAccount(TransactionData.FromAccount.builder()
                         .id(defaultParams.fromAccount as Long)

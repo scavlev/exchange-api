@@ -8,7 +8,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Optional;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_ABSENT;
@@ -22,7 +22,7 @@ public class TransactionData {
     private final Long id;
 
     @NotNull
-    private final LocalDateTime timestamp;
+    private final ZonedDateTime timestamp;
 
     @NotNull
     private final TransactionType type;
