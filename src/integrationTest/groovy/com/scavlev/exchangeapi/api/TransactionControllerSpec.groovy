@@ -155,7 +155,7 @@ class TransactionControllerSpec extends Specification {
                 .andReturn()
     }
 
-    def "should return status code 409 if exchange currency paid is not found"() {
+    def "should return status code 409 if exchange currency pair is not found"() {
         given:
         1 * processTransaction.process(_ as ProcessTransactionRequest) >> { ProcessTransactionRequest processTransactionRequest ->
             throw new CurrencyPairNotFoundException("", "")
