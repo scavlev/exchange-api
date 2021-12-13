@@ -4,7 +4,7 @@ import com.scavlev.exchangeapi.IntegrationSpecification
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
 
-class ClientRepositorySpec extends IntegrationSpecification {
+class ClientRepositoryITSpec extends IntegrationSpecification {
 
     @Autowired
     ClientRepository clientRepository
@@ -12,7 +12,7 @@ class ClientRepositorySpec extends IntegrationSpecification {
     @Transactional
     def "should deactivate client by id"() {
         given:
-        def clientId = 1L
+        long clientId = 1
 
         when:
         clientRepository.deactivateClient(clientId)

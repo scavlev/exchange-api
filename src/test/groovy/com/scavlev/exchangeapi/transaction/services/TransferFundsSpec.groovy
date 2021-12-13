@@ -1,6 +1,6 @@
 package com.scavlev.exchangeapi.transaction.services
 
-
+import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountEntryType
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.transaction.OperationOnNonExistentAccountException
@@ -20,9 +20,9 @@ class TransferFundsSpec extends Specification {
 
     def "should throw exception if debit account is not found"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.empty()
         accountRepository.findById(toAccountId) >> Optional.of(createAccount())
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -36,9 +36,9 @@ class TransferFundsSpec extends Specification {
 
     def "should throw exception if credit account is not found"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.of(createAccount())
         accountRepository.findById(toAccountId) >> Optional.empty()
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -52,11 +52,11 @@ class TransferFundsSpec extends Specification {
 
     def "should correctly create and save transfer transaction"() {
         given:
-        def fromAccountId = 1
-        def fromAccount = createAccount(balance: 20, currency: "USD")
-        def toAccountId = 2
-        def toAccount = createAccount(balance: 20, currency: "USD")
-        def amount = 10.0
+        long fromAccountId = 1
+        Account fromAccount = createAccount(balance: 20, currency: "USD")
+        long toAccountId = 2
+        Account toAccount = createAccount(balance: 20, currency: "USD")
+        BigDecimal amount = 10.0
         accountRepository.findById(fromAccountId) >> Optional.of(fromAccount)
         accountRepository.findById(toAccountId) >> Optional.of(toAccount)
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)

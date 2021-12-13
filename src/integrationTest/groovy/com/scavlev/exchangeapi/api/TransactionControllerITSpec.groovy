@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(TransactionController)
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = [DataModelAssemblerConfiguration])
-class TransactionControllerSpec extends Specification {
+class TransactionControllerITSpec extends Specification {
 
     @Autowired
     MockMvc mvc
@@ -345,7 +345,7 @@ class TransactionControllerSpec extends Specification {
                 .andReturn()
     }
 
-    static def getResponseExample(String filename) {
+    static String getResponseExample(String filename) {
         new File("src/integrationTest/resources/api-responses/transactions/${filename}.json").text
     }
 }

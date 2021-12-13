@@ -17,7 +17,7 @@ class DeactivateClientSpec extends Specification {
 
     def "should deactivate client and all its accounts"() {
         given:
-        def clientId = 1
+        long clientId = 1
         Client client = createClient(id: clientId)
 
         when:
@@ -31,7 +31,7 @@ class DeactivateClientSpec extends Specification {
 
     def "should throw exception if client is not found"() {
         given:
-        def clientId = 1
+        long clientId = 1
 
         when:
         deactivateClient.deactivate(clientId)

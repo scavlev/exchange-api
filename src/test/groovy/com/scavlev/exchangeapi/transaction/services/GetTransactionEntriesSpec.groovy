@@ -19,7 +19,7 @@ class GetTransactionEntriesSpec extends Specification {
 
     def "should fail if transaction not found"() {
         given:
-        def transactionId = 1
+        long transactionId = 1
 
         when:
         getTransactionEntries.get(transactionId)
@@ -31,7 +31,7 @@ class GetTransactionEntriesSpec extends Specification {
 
     def "should return all transaction entry data"() {
         given:
-        def transactionId = 1
+        long transactionId = 1
 
         Transaction transaction = createTransaction(type: TransactionType.TRANSFER).with {
             entries.addAll(

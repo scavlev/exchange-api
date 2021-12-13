@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(ClientController)
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = [DataModelAssemblerConfiguration])
-class ClientControllerSpec extends Specification {
+class ClientControllerITSpec extends Specification {
 
     @Autowired
     MockMvc mvc
@@ -185,7 +185,7 @@ class ClientControllerSpec extends Specification {
                 .andReturn()
     }
 
-    static def getResponseExample(String filename) {
+    static String getResponseExample(String filename) {
         new File("src/integrationTest/resources/api-responses/clients/${filename}.json").text
     }
 }

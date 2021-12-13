@@ -5,7 +5,7 @@ import com.scavlev.exchangeapi.client.domain.ClientRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
 
-class AccountRepositorySpec extends IntegrationSpecification {
+class AccountRepositoryITSpec extends IntegrationSpecification {
 
     @Autowired
     AccountRepository accountRepository
@@ -15,7 +15,7 @@ class AccountRepositorySpec extends IntegrationSpecification {
     @Transactional
     def "should deactivate account by id"() {
         given:
-        def accountId = 2L
+        long accountId = 2
 
         when:
         accountRepository.deactivateAccount(accountId)
@@ -27,7 +27,7 @@ class AccountRepositorySpec extends IntegrationSpecification {
     @Transactional
     def "should deactivate all client accounts by id"() {
         given:
-        def clientId = 2L
+        long clientId = 2
 
         when:
         accountRepository.deactivateClientAccounts(clientId)

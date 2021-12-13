@@ -13,7 +13,7 @@ import org.springframework.test.util.ReflectionTestUtils
 
 class FixtureHelper {
 
-    static def createClient(Map params = [:]) {
+    static Client createClient(Map params = [:]) {
         def defaultParams = [
                 id    : 1,
                 status: ClientStatus.ACTIVE
@@ -27,7 +27,7 @@ class FixtureHelper {
         client
     }
 
-    static def createAccount(Map params = [:], Closure<Account> c = null) {
+    static Account createAccount(Map params = [:], Closure<Account> c = null) {
         def defaultParams = [
                 id      : 1,
                 client  : createClient(),
@@ -52,7 +52,7 @@ class FixtureHelper {
         account
     }
 
-    static def createAccountEntry(Map params = [:]) {
+    static AccountEntry createAccountEntry(Map params = [:]) {
         def defaultParams = [
                 id         : 1,
                 account    : createAccount(),
@@ -72,7 +72,7 @@ class FixtureHelper {
         accountEntry
     }
 
-    static def createTransaction(Map params = [:]) {
+    static Transaction createTransaction(Map params = [:]) {
         def defaultParams = [
                 id             : 1,
                 transactionType: TransactionType.DEPOSIT
@@ -87,7 +87,7 @@ class FixtureHelper {
         transaction
     }
 
-    static def createExchangeRate(Map params = [:]) {
+    static ExchangeRate createExchangeRate(Map params = [:]) {
         def defaultParams = [
                 id          : 1,
                 fromCurrency: "EUR",

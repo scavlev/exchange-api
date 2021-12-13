@@ -22,8 +22,8 @@ class GetAccountEntriesSpec extends Specification {
 
     def "should fail if account is not found"() {
         given:
-        def accountId = 1
-        def pageRequest = PageRequest.of(0, 10)
+        long accountId = 1
+        PageRequest pageRequest = PageRequest.of(0, 10)
 
         when:
         getAccountEntries.get(accountId, pageRequest)
@@ -35,8 +35,8 @@ class GetAccountEntriesSpec extends Specification {
 
     def "should return all account entry data"() {
         given:
-        def accountId = 1
-        def pageRequest = PageRequest.of(0, 10)
+        long accountId = 1
+        PageRequest pageRequest = PageRequest.of(0, 10)
 
         Account account = createAccount().with {
             entries.addAll(

@@ -10,13 +10,13 @@ class CurrencyExchangeServiceSpec extends Specification {
 
     def "should get exchange rate for currency pair"() {
         given:
-        def baseCurrency = "USD"
-        def targetCurrency = "EUR"
-        def expectedRate = 0.35
+        String baseCurrency = "USD"
+        String targetCurrency = "EUR"
+        BigDecimal expectedRate = 0.35
         api.getLatestRates(baseCurrency) >> new FreecurrencyapiLatestData(["EUR": expectedRate])
 
         when:
-        def rate = currencyExchangeService.getRate(baseCurrency, targetCurrency)
+        BigDecimal rate = currencyExchangeService.getRate(baseCurrency, targetCurrency)
 
         then:
         rate == expectedRate
@@ -24,8 +24,8 @@ class CurrencyExchangeServiceSpec extends Specification {
 
     def "should throw exception if currency pair is not found"() {
         given:
-        def baseCurrency = "USD"
-        def targetCurrency = "EUR"
+        String baseCurrency = "USD"
+        String targetCurrency = "EUR"
         api.getLatestRates(baseCurrency) >> new FreecurrencyapiLatestData([:])
 
         when:
@@ -37,8 +37,8 @@ class CurrencyExchangeServiceSpec extends Specification {
 
     def "should throw exception if exchange rate api is unavailable"() {
         given:
-        def baseCurrency = "USD"
-        def targetCurrency = "EUR"
+        String baseCurrency = "USD"
+        String targetCurrency = "EUR"
         api.getLatestRates(baseCurrency) >> { throw [502, ""] as FeignException }
 
         when:

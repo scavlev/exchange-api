@@ -17,7 +17,7 @@ class UpdateAccountSpec extends Specification {
 
     def "should update account with request data"() {
         given:
-        def accountId = 1
+        long accountId = 1
         UpdateAccountRequest updateAccountRequest = new UpdateAccountRequest(AccountStatus.ACTIVE)
         Account existingAccount = createAccount(id: accountId, status: AccountStatus.DEACTIVATED)
 
@@ -36,7 +36,7 @@ class UpdateAccountSpec extends Specification {
 
     def "should throw exception if account is not found"() {
         given:
-        def accountId = 1
+        long accountId = 1
         UpdateAccountRequest updateAccountRequest = new UpdateAccountRequest(AccountStatus.ACTIVE)
 
         when:

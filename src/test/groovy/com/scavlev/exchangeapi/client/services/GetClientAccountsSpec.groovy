@@ -17,7 +17,7 @@ class GetClientAccountsSpec extends Specification {
 
     def "should fail if client doesn't exist"() {
         given:
-        def clientId = 1
+        long clientId = 1
 
         when:
         getClientAccounts.get(clientId)
@@ -29,7 +29,7 @@ class GetClientAccountsSpec extends Specification {
 
     def "should return all client account data"() {
         given:
-        def clientId = 1
+        long clientId = 1
 
         Client client = createClient(id: clientId).with {
             accounts.addAll(

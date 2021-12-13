@@ -1,5 +1,6 @@
 package com.scavlev.exchangeapi.account.services
 
+import com.scavlev.exchangeapi.account.AccountData
 import com.scavlev.exchangeapi.account.AccountNotFoundException
 import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountRepository
@@ -15,11 +16,11 @@ class DeactivateAccountSpec extends Specification {
 
     def "should deactivate account"() {
         given:
-        def accountId = 1
+        long accountId = 1
         Account account = createAccount(id: accountId)
 
         when:
-        def deactivatedAccountData = deactivateAccount.deactivate(accountId)
+        AccountData deactivatedAccountData = deactivateAccount.deactivate(accountId)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.of(account)
@@ -29,7 +30,7 @@ class DeactivateAccountSpec extends Specification {
 
     def "should throw exception if account is not found"() {
         given:
-        def accountId = 1
+        long accountId = 1
 
         when:
         deactivateAccount.deactivate(accountId)

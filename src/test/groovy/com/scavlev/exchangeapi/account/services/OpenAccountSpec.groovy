@@ -20,7 +20,7 @@ class OpenAccountSpec extends Specification {
 
     def "should create new account"() {
         given:
-        def clientId = 1
+        long clientId = 1
         OpenAccountRequest request = new OpenAccountRequest(clientId, "EUR")
         Client client = createClient()
 
@@ -47,7 +47,7 @@ class OpenAccountSpec extends Specification {
 
     def "should throw exception if client is not found"() {
         given:
-        def clientId = 1
+        long clientId = 1
         OpenAccountRequest request = new OpenAccountRequest(clientId, "EUR")
 
         when:

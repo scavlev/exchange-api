@@ -12,12 +12,12 @@ class SupportedCurrencyValidatorSpec extends Specification {
 
     def "should return false if currency is not on supported list"() {
         given:
-        def currency = "DOGE"
+        String currency = "DOGE"
         supportedCurrencies.currencies >> ["USD", "EUR"]
         ConstraintValidatorContext context = Mock()
 
         when:
-        def result = validator.isValid(currency, context)
+        boolean result = validator.isValid(currency, context)
 
         then:
         !result
@@ -27,12 +27,12 @@ class SupportedCurrencyValidatorSpec extends Specification {
 
     def "should return true if currency is on supported list"() {
         given:
-        def currency = "EUR"
+        String currency = "EUR"
         supportedCurrencies.currencies >> ["USD", "EUR"]
         ConstraintValidatorContext context = Mock()
 
         when:
-        def result = validator.isValid(currency, context)
+        boolean result = validator.isValid(currency, context)
 
         then:
         result

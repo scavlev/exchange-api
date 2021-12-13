@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 
-class AccountEntryRepositorySpec extends IntegrationSpecification {
+class AccountEntryRepositoryITSpec extends IntegrationSpecification {
 
     @Autowired
     AccountEntryRepository accountEntryRepository

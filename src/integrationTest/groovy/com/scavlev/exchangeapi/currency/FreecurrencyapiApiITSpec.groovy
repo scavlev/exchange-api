@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*
 
-class FreecurrencyapiApiSpec extends WireMockSpecification {
+class FreecurrencyapiApiITSpec extends WireMockSpecification {
 
     @Autowired
     FreecurrencyapiApi freecurrencyapiApi
@@ -38,11 +38,11 @@ class FreecurrencyapiApiSpec extends WireMockSpecification {
         "DKK"        | _
     }
 
-    static def currencyResponseFile(String currencyCode) {
+    static File currencyResponseFile(String currencyCode) {
         new File("src/integrationTest/resources/__files/currencies/${currencyCode}.json")
     }
 
-    static def objectMapper() {
+    static ObjectMapper objectMapper() {
         new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
     }
 }

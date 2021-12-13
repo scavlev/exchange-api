@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(AccountController)
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = [DataModelAssemblerConfiguration])
-class AccountControllerSpec extends Specification {
+class AccountControllerITSpec extends Specification {
 
     @Autowired
     MockMvc mvc
@@ -77,7 +77,7 @@ class AccountControllerSpec extends Specification {
 
     def "should return status 404 if account is not found"() {
         given:
-        def accountId = 1
+        int accountId = 1
         1 * findAccount.find(accountId) >> Optional.empty()
 
         expect:
@@ -221,7 +221,7 @@ class AccountControllerSpec extends Specification {
                 .andReturn()
     }
 
-    static def getResponseExample(String filename) {
+    static String getResponseExample(String filename) {
         new File("src/integrationTest/resources/api-responses/accounts/${filename}.json").text
     }
 

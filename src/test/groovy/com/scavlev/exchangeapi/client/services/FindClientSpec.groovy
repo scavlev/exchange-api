@@ -1,5 +1,6 @@
 package com.scavlev.exchangeapi.client.services
 
+import com.scavlev.exchangeapi.client.ClientData
 import com.scavlev.exchangeapi.client.domain.Client
 import com.scavlev.exchangeapi.client.domain.ClientRepository
 import spock.lang.Specification
@@ -14,10 +15,10 @@ class FindClientSpec extends Specification {
 
     def "should return empty optional if client is not found"() {
         given:
-        def clientId = 1
+        long clientId = 1
 
         when:
-        def clientData = findClient.find(clientId)
+        Optional<ClientData> clientData = findClient.find(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.empty()
@@ -26,11 +27,11 @@ class FindClientSpec extends Specification {
 
     def "should return client data if client is found"() {
         given:
-        def clientId = 1
+        long clientId = 1
         Client client = createClient(id: clientId)
 
         when:
-        def clientData = findClient.find(clientId)
+        Optional<ClientData> clientData = findClient.find(clientId)
 
         then:
         1 * clientRepository.findById(clientId) >> Optional.of(client)

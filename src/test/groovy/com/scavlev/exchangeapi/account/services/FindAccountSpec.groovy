@@ -1,5 +1,6 @@
 package com.scavlev.exchangeapi.account.services
 
+import com.scavlev.exchangeapi.account.AccountData
 import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import spock.lang.Specification
@@ -14,10 +15,10 @@ class FindAccountSpec extends Specification {
 
     def "should return empty optional if account is not found"() {
         given:
-        def accountId = 1
+        long accountId = 1
 
         when:
-        def accountData = findAccount.find(accountId)
+        Optional<AccountData> accountData = findAccount.find(accountId)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.empty()
@@ -26,11 +27,11 @@ class FindAccountSpec extends Specification {
 
     def "should return account data if account is found"() {
         given:
-        def accountId = 1
+        long accountId = 1
         Account account = createAccount(id: accountId)
 
         when:
-        def accountData = findAccount.find(accountId)
+        Optional<AccountData> accountData = findAccount.find(accountId)
 
         then:
         1 * accountRepository.findById(accountId) >> Optional.of(account)

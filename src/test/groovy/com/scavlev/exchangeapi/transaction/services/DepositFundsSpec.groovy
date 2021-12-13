@@ -1,6 +1,7 @@
 package com.scavlev.exchangeapi.transaction.services
 
 import com.scavlev.exchangeapi.account.DeactivatedAccountAccessException
+import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountEntryType
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.account.domain.AccountStatus
@@ -21,8 +22,8 @@ class DepositFundsSpec extends Specification {
 
     def "should throw exception if no account is found"() {
         given:
-        def accountId = 1
-        def amount = 10.11
+        long accountId = 1
+        BigDecimal amount = 10.11
         accountRepository.findById(accountId) >> Optional.empty()
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 
@@ -35,8 +36,8 @@ class DepositFundsSpec extends Specification {
 
     def "should throw exception if account is deactivated"() {
         given:
-        def accountId = 1
-        def amount = 10.11
+        long accountId = 1
+        BigDecimal amount = 10.11
         accountRepository.findById(accountId) >> Optional.of(createAccount(status: AccountStatus.DEACTIVATED))
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 
@@ -49,9 +50,9 @@ class DepositFundsSpec extends Specification {
 
     def "should create and save deposit transaction"() {
         given:
-        def accountId = 1
-        def amount = 10.11
-        def account = createAccount(balance: 0.0)
+        long accountId = 1
+        BigDecimal amount = 10.11
+        Account account = createAccount(balance: 0.0)
         accountRepository.findById(accountId) >> Optional.of(account)
         DepositTransactionRequest request = new DepositTransactionRequest(accountId, amount)
 

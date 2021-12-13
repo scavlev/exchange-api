@@ -1,5 +1,6 @@
 package com.scavlev.exchangeapi.transaction.services
 
+import com.scavlev.exchangeapi.transaction.TransactionData
 import com.scavlev.exchangeapi.transaction.domain.Transaction
 import com.scavlev.exchangeapi.transaction.domain.TransactionRepository
 import spock.lang.Specification
@@ -14,10 +15,10 @@ class FindTransactionSpec extends Specification {
 
     def "should return empty optional if transaction is not found"() {
         given:
-        def transactionId = 1
+        long transactionId = 1
 
         when:
-        def transactionData = findTransaction.find(transactionId)
+        Optional<TransactionData> transactionData = findTransaction.find(transactionId)
 
         then:
         1 * transactionRepository.findById(transactionId) >> Optional.empty()
@@ -26,11 +27,11 @@ class FindTransactionSpec extends Specification {
 
     def "should return transaction data if transaction is found"() {
         given:
-        def transactionId = 1
+        long transactionId = 1
         Transaction transaction = createTransaction()
 
         when:
-        def transactionData = findTransaction.find(transactionId)
+        Optional<TransactionData> transactionData = findTransaction.find(transactionId)
 
         then:
         1 * transactionRepository.findById(transactionId) >> Optional.of(transaction)

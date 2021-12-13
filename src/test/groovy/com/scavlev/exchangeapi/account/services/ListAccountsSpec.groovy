@@ -1,6 +1,7 @@
 package com.scavlev.exchangeapi.account.services
 
 import com.scavlev.exchangeapi.account.AccountData
+import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
@@ -16,8 +17,8 @@ class ListAccountsSpec extends Specification {
 
     def "should return a page of account data"() {
         given:
-        def pageRequest = PageRequest.of(0, 10)
-        def accounts = (1..10).collect {
+        PageRequest pageRequest = PageRequest.of(0, 10)
+        List<Account> accounts = (1..10).collect {
             createAccount(id: it)
         }
 

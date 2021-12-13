@@ -18,7 +18,7 @@ class UpdateClientSpec extends Specification {
 
     def "should update client with request data"() {
         given:
-        def clientId = 1
+        long clientId = 1
         UpdateClientRequest updateClientRequest = new UpdateClientRequest(ClientStatus.ACTIVE)
         Client existingClient = createClient(status: ClientStatus.DEACTIVATED)
 
@@ -37,7 +37,7 @@ class UpdateClientSpec extends Specification {
 
     def "should throw exception if client is not found"() {
         given:
-        def clientId = 1
+        long clientId = 1
         UpdateClientRequest updateClientRequest = new UpdateClientRequest(ClientStatus.ACTIVE)
 
         when:

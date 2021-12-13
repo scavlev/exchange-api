@@ -1,6 +1,7 @@
 package com.scavlev.exchangeapi.transaction.services
 
 import com.scavlev.exchangeapi.account.DeactivatedAccountAccessException
+import com.scavlev.exchangeapi.account.domain.Account
 import com.scavlev.exchangeapi.account.domain.AccountRepository
 import com.scavlev.exchangeapi.account.domain.AccountStatus
 import com.scavlev.exchangeapi.currency.CurrencyExchangeService
@@ -26,9 +27,9 @@ class ProcessTransactionSpec extends Specification {
 
     def "should throw exception if debit account is not found"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.empty()
         accountRepository.findById(toAccountId) >> Optional.of(createAccount())
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -42,9 +43,9 @@ class ProcessTransactionSpec extends Specification {
 
     def "should throw exception if credit account is not found"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.of(createAccount())
         accountRepository.findById(toAccountId) >> Optional.empty()
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -58,9 +59,9 @@ class ProcessTransactionSpec extends Specification {
 
     def "should throw exception if debit account is deactivated"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.of(createAccount(status: AccountStatus.DEACTIVATED))
         accountRepository.findById(toAccountId) >> Optional.of(createAccount())
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -74,9 +75,9 @@ class ProcessTransactionSpec extends Specification {
 
     def "should throw exception if credit account is deactivated"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.of(createAccount())
         accountRepository.findById(toAccountId) >> Optional.of(createAccount(status: AccountStatus.DEACTIVATED))
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -90,9 +91,9 @@ class ProcessTransactionSpec extends Specification {
 
     def "should throw exception if credit account has insufficient funds"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.of(createAccount(balance: 5))
         accountRepository.findById(toAccountId) >> Optional.of(createAccount())
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -106,9 +107,9 @@ class ProcessTransactionSpec extends Specification {
 
     def "should execute transfer if account currencies are the same"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
         accountRepository.findById(fromAccountId) >> Optional.of(createAccount(currency: "same", balance: 20))
         accountRepository.findById(toAccountId) >> Optional.of(createAccount(currency: "same"))
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)
@@ -123,12 +124,12 @@ class ProcessTransactionSpec extends Specification {
 
     def "should execute exchange if account currencies are different"() {
         given:
-        def fromAccountId = 1
-        def toAccountId = 2
-        def amount = 10.11
-        def fromAccount = createAccount(currency: "same", balance: 20)
-        def toAccount = createAccount(currency: "different")
-        def rate = 0.5
+        long fromAccountId = 1
+        long toAccountId = 2
+        BigDecimal amount = 10.11
+        Account fromAccount = createAccount(currency: "same", balance: 20)
+        Account toAccount = createAccount(currency: "different")
+        BigDecimal rate = 0.5
         accountRepository.findById(fromAccountId) >> Optional.of(fromAccount)
         accountRepository.findById(toAccountId) >> Optional.of(toAccount)
         ProcessTransactionRequest request = new ProcessTransactionRequest(fromAccountId, toAccountId, amount)

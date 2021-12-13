@@ -2,13 +2,14 @@ package com.scavlev.exchangeapi.currency
 
 import com.scavlev.exchangeapi.WireMockSpecification
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.cache.Cache
 import org.springframework.cache.CacheManager
 import org.springframework.cache.interceptor.SimpleKey
 import spock.lang.Unroll
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*
 
-class CurrencyExchangeServiceSpec extends WireMockSpecification {
+class CurrencyExchangeServiceITSpec extends WireMockSpecification {
 
     @Autowired
     CurrencyExchangeService currencyExchangeService
@@ -66,14 +67,14 @@ class CurrencyExchangeServiceSpec extends WireMockSpecification {
 
     def "should cache currency exchange rates"() {
         given:
-        def baseCurrency = "BTC"
-        def targetCurrency = "XRP"
+        String baseCurrency = "BTC"
+        String targetCurrency = "XRP"
         wireMock.stubFor(get(urlPathEqualTo("/api/v2/latest"))
                 .willReturn(ok()
                         .withBodyFile("currencies/{{request.query.base_currency}}.json")))
 
-        def cache = cacheManager.getCache('currencies')
-        def cacheKey = new SimpleKey(baseCurrency, targetCurrency)
+        Cache cache = cacheManager.getCache('currencies')
+        SimpleKey cacheKey = new SimpleKey(baseCurrency, targetCurrency)
         cache.get(cacheKey) == null
 
         when:

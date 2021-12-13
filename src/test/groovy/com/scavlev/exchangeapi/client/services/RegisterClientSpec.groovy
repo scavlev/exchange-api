@@ -1,6 +1,5 @@
 package com.scavlev.exchangeapi.client.services
 
-
 import com.scavlev.exchangeapi.client.ClientData
 import com.scavlev.exchangeapi.client.domain.Client
 import com.scavlev.exchangeapi.client.domain.ClientRepository

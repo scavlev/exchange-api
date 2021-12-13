@@ -11,7 +11,7 @@ import java.time.LocalDateTime
 
 class FixtureHelper {
 
-    static def accountDataFixture(Map params = [:]) {
+    static AccountData accountDataFixture(Map params = [:]) {
         def defaultParams = [id      : 1,
                              clientId: (params.clientId ?: (params.id ?: 1) * 77),
                              currency: "EUR",
@@ -26,7 +26,7 @@ class FixtureHelper {
                 .build()
     }
 
-    static def clientDataFixture(Map params = [:]) {
+    static ClientData clientDataFixture(Map params = [:]) {
         def defaultParams = [id    : 1,
                              status: ClientStatus.ACTIVE] << params
         ClientData.builder()
@@ -35,7 +35,7 @@ class FixtureHelper {
                 .build()
     }
 
-    static def exchangeTransactionDataFixture(Map params = [:]) {
+    static TransactionData exchangeTransactionDataFixture(Map params = [:]) {
         def defaultParams = [id         : 1,
                              fromAccount: (params.fromAccount ?: (params.id ?: 1) * 25),
                              toAccount  : (params.toAccount ?: (params.id ?: 1) * 12),
@@ -63,7 +63,7 @@ class FixtureHelper {
                 .build()
     }
 
-    static def transferTransactionDataFixture(Map params = [:]) {
+    static TransactionData transferTransactionDataFixture(Map params = [:]) {
         def defaultParams = [id         : 1,
                              fromAccount: (params.fromAccount ?: (params.id ?: 1) * 25),
                              toAccount  : (params.toAccount ?: (params.id ?: 1) * 12),
@@ -85,7 +85,7 @@ class FixtureHelper {
                 .build()
     }
 
-    static def depositTransactionDataFixture(Map params = [:]) {
+    static TransactionData depositTransactionDataFixture(Map params = [:]) {
         def defaultParams = [id       : 1,
                              toAccount: (params.toAccount ?: (params.id ?: 1) * 12),
                              amount   : (params.amount ?: (params.id ?: 1) * 15)] << params
@@ -101,7 +101,7 @@ class FixtureHelper {
                 .build()
     }
 
-    static def withdrawalTransactionDataFixture(Map params = [:]) {
+    static TransactionData withdrawalTransactionDataFixture(Map params = [:]) {
         def defaultParams = [id         : 1,
                              fromAccount: (params.fromAccount ?: (params.id ?: 1) * 25),
                              amount     : (params.amount ?: (params.id ?: 1) * 15)] << params

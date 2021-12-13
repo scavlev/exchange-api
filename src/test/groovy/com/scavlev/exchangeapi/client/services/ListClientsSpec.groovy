@@ -1,6 +1,7 @@
 package com.scavlev.exchangeapi.client.services
 
 import com.scavlev.exchangeapi.client.ClientData
+import com.scavlev.exchangeapi.client.domain.Client
 import com.scavlev.exchangeapi.client.domain.ClientRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
@@ -16,8 +17,8 @@ class ListClientsSpec extends Specification {
 
     def "should return a page of client data"() {
         given:
-        def pageRequest = PageRequest.of(0, 10)
-        def clients = (1..10).collect {
+        PageRequest pageRequest = PageRequest.of(0, 10)
+        List<Client> clients = (1..10).collect {
             createClient(id: it)
         }
 

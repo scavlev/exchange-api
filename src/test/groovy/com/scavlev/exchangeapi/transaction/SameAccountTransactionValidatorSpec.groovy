@@ -15,7 +15,7 @@ class SameAccountTransactionValidatorSpec extends Specification {
         ConstraintValidatorContext context = Mock()
 
         when:
-        def result = validator.isValid(processTransactionRequest, context)
+        boolean result = validator.isValid(processTransactionRequest, context)
 
         then:
         !result
@@ -29,7 +29,7 @@ class SameAccountTransactionValidatorSpec extends Specification {
         ConstraintValidatorContext context = Mock()
 
         when:
-        def result = validator.isValid(processTransactionRequest, context)
+        boolean result = validator.isValid(processTransactionRequest, context)
 
         then:
         result
