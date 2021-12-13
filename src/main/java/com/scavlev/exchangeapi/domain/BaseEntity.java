@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @MappedSuperclass
@@ -16,6 +16,6 @@ public abstract class BaseEntity {
 
     @CreationTimestamp
     @Column(updatable = false)
-    private ZonedDateTime entityCreated;
+    private OffsetDateTime entityCreated;
 
 }

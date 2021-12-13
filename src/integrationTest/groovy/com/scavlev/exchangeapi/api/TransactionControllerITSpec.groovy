@@ -19,7 +19,7 @@ import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
-import java.time.ZonedDateTime
+import java.time.OffsetDateTime
 
 import static com.scavlev.exchangeapi.api.FixtureHelper.*
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
@@ -96,7 +96,7 @@ class TransactionControllerITSpec extends Specification {
                         .accountId(id)
                         .transactionId(it * 16)
                         .currency("EUR")
-                        .timestamp(ZonedDateTime.parse('2021-12-10T20:17:22.476322+00'))
+                        .timestamp(OffsetDateTime.parse('2021-12-10T20:17:22.476322Z'))
                         .type(AccountEntryType.DEBIT)
                         .amount(it * 77.3)
                         .build()

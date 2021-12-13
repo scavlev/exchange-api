@@ -4,14 +4,14 @@ import lombok.Builder;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Data
 @Builder
 class ApiError {
 
     @NotNull
-    private final ZonedDateTime timestamp;
+    private final OffsetDateTime timestamp;
 
     @NotNull
     private final int status;

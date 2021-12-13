@@ -5,7 +5,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Getter
 @MappedSuperclass
@@ -15,5 +15,5 @@ public abstract class MutableBaseEntity extends BaseEntity {
     private Integer version;
 
     @UpdateTimestamp
-    private ZonedDateTime entityUpdated;
+    private OffsetDateTime entityUpdated;
 }

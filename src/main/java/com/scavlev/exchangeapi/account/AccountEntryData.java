@@ -7,7 +7,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 
 @Data
 @Builder
@@ -20,7 +20,7 @@ public class AccountEntryData {
     private final Long transactionId;
 
     @NotNull
-    private final ZonedDateTime timestamp;
+    private final OffsetDateTime timestamp;
 
     @NotNull
     private final BigDecimal amount;
