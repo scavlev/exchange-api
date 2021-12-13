@@ -6,6 +6,8 @@ import com.scavlev.exchangeapi.transaction.domain.TransactionType
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
 
+import java.time.OffsetDateTime
+
 class FindTransactionITSpec extends IntegrationSpecification {
 
     @Autowired
@@ -23,7 +25,7 @@ class FindTransactionITSpec extends IntegrationSpecification {
         transactionData.present
         with(transactionData.get()) {
             id == transactionId
-            timestamp != null
+            timestamp.isEqual(OffsetDateTime.parse('2021-12-13T00:30:36.070807Z'))
             type == TransactionType.DEPOSIT
             !exchangeRate.present
             !fromAccount.present
